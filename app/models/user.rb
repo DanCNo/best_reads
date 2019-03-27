@@ -1,10 +1,10 @@
 class User < ApplicationRecord
 
 	validates :username, :email, :password_digest, :session_token, presence: true
-	validates :username, :email uniqueness: true
+	validates :username, :email, uniqueness: true
 	validates :password, length: {minimum: 6}, allow_nil: true
 
-	attr_reader: password
+	attr_reader :password
 
 	after_initialize :ensure_session_token
 
@@ -35,10 +35,13 @@ class User < ApplicationRecord
 	end
 
 	def self.generate_session_token
+
 		token = SecureRandom.urlsafe_base64
+
 		while User.find_by(session_token: token)
 			token = SecureRandom.urlsafe_base64
 		end
+
 		token
 	end
 

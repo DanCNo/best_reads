@@ -1,9 +1,9 @@
 import React from 'react';
+import {withRouter} from 'react-router-dom';
 
 class SessionForm extends React.Component {
   constructor(props) {
     super(props);
-    debugger
     this.state = {
       username: '',
       email: '',
@@ -22,9 +22,8 @@ class SessionForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const user = Object.assign({}, this.state);
-    debugger
     this.props.processForm(user).then(()=> {
-      debugger
+
       this.props.history.push("/home");
     }) 
   }
@@ -32,7 +31,7 @@ class SessionForm extends React.Component {
   handleDemo(e) {
     e.preventDefault();
     const user = Object.assign({}, {email: "test1@gmail.com", password: "bestreads"});
-    this.props.processForm(user);
+    this.props.processForm(user).then(()=> this.props.history.push("/home"));
   }
 
   renderErrors() {
@@ -64,9 +63,9 @@ class SessionForm extends React.Component {
 
     const demoButton = (this.props.formType === 'login') ? (
       <>
-        <label>
-          <button value='Demo Login' onClick={this.handleDemo}/>
-        </label>
+        <div className="demo-button">
+          <button value='Demo Login' onClick={this.handleDemo}>demo login</button>
+        </div>
         </>
     ) : (<label></label>)
 
@@ -96,6 +95,7 @@ class SessionForm extends React.Component {
             <input className={`${this.props.formType}-submit`} type="submit" value={this.props.formType} />
           </div>
         </form>
+        {demoButton}
       </div>
     );
 
@@ -104,4 +104,4 @@ class SessionForm extends React.Component {
 
 }
 
-export default SessionForm;
+export default withRouter(SessionForm);

@@ -6,15 +6,21 @@ const StartPage = () => {
   
   return(
     <>
-      <header className="start-page-bar">
-        <div className="start-page-bar text">
-          <span className="start-page-bar-text-best">best</span>
-          <span className="start-page-bar-text-reads">reads</span>
+      <div className="start-page-container">
+        <div className="start-page-bar">
+          <div>
+            <div className="start-page-text">
+              <span className="start-page-text-best">best</span>
+              <span className="start-page-text-reads">reads</span>
+            </div>
+          </div>
+          < LoginFormContainer />
         </div>
-        < LoginFormContainer />
-      </header>
-      <div className="sign-up-header">
-        < SignUpContainer />
+        
+        <div className="sign-up-header">
+          <img className ="slogan-img" src={window.bestreadssloganURL} />
+          < SignUpContainer />
+        </div>
       </div>
     </>
   )

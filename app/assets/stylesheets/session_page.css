@@ -1,0 +1,31 @@
+.start-page-bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.start-page-bar-text-best {
+  font-size: 47px;
+  font-weight: 200;
+  color: #95897d;
+}
+
+.start-page-bar-text-reads {
+  font-size: 47px;
+  font-weight: 400;
+  color: #362111;
+  
+}
+
+.signup-form-box {
+  justify-content: flex-end
+}
+
+.signup-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.signup-submit {
+  width: 60px;
+}

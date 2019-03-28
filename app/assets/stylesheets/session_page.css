@@ -1,7 +1,7 @@
 .start-page-bar {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
 .start-page-bar-text-best {
@@ -17,8 +17,9 @@
   
 }
 
-.signup-form-box {
-  justify-content: flex-end
+.signup-form-container {
+  display: flex;
+  justify-content: flex-end;
 }
 
 .signup-form {

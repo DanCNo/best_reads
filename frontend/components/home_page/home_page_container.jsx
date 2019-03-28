@@ -1,5 +1,5 @@
-import { connect } from "react-redux";
-import Navbar from './navbar';
+import HomePage from './home_page';
+import { connect } from 'react-redux';
 
 const mapStateToProps = ({ session, entities: { users } }) => {
   return {
@@ -9,8 +9,8 @@ const mapStateToProps = ({ session, entities: { users } }) => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    logout: () => dispatch(logout())
+    logout: ()=> dispatch(logout())
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Navbar);
+export default connect(mapStateToProps, mapDispatchToProps)(HomePage);

@@ -1,20 +1,23 @@
 import React from 'react';
 import { Route, Redirect, Switch, Link, HashRouter } from 'react-router-dom';
-import GreetingContainer from './greeting/greeting_container';
-import LoginFormContainer from './session_form/login_form_container';
-import SignUpContainer from './session_form/signup_form_container';
+import HomePageContainer from './home_page/home_page_container'
 import StartPage from './start_page/start_page';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
 const App = () => (
-  <div>
-    <header>
-      < StartPage />
-    </header>
+  <>
+    <div>
+      <header>
+        {/* < StartPage /> */}
+      </header>
+    </div>
 
-    <AuthRoute path="/login" component={LoginFormContainer} />
-    <AuthRoute path="/signup" component={SignUpContainer} />
-  </div>
+    <Switch >
+      <ProtectedRoute exact path="/home" component={HomePageContainer} />
+      < StartPage />
+      {/* <AuthRoute exact path="/" component={StartPage} /> */}
+    </Switch>
+  </>
 );
 
 export default App;

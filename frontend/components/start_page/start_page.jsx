@@ -1,6 +1,6 @@
 import React from 'react';
-import LoginFormContainer from '../session_form/test_login_form_container';
-import SignUpContainer from '../session_form/test_signup_form_container';
+import LoginFormContainer from '../session_form/login_form_container';
+import SignUpContainer from '../session_form/signup_form_container';
 
 const StartPage = () => {
   

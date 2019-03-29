@@ -35,31 +35,35 @@ class SessionForm extends React.Component {
   }
 
   renderErrors() {
-    return (
-      <ul>
-        {this.props.errors.map((error, i) => (
-          <li key={`error-${i}`}>
-            {error}
-          </li>
-        ))}
-      </ul>
-    );
+    if(this.props.formType === 'signup'){
+      return (
+        <ul>
+          {this.props.errors.map((error, i) => (
+            <li key={`error-${i}`}>
+              {error}
+            </li>
+          ))}
+        </ul>
+      );
+      
+    } else { return null } 
   }
 
   render() {
     const extraForm = (this.props.formType === 'signup') ? (
       <>
-      
-        <label>
+        <div className="username-text">
           <input
             type='text'
             value={this.state.username}
             onChange={this.update('username')}
-            placeholder='Username'
+            required="required"
+            className="signup-input"
+            placeholder='Name'
           />
-        </label>
+        </div>
       </>
-    ) : (<label></label>)
+    ) : (<div></div>)
 
     const demoButton = (this.props.formType === 'login') ? (
       <>
@@ -67,7 +71,7 @@ class SessionForm extends React.Component {
           <button value='Demo Login' onClick={this.handleDemo}>demo login</button>
         </div>
         </>
-    ) : (<label></label>)
+    ) : (<div></div>)
 
     return (
       <div className={`${this.props.formType}-form-container`}>
@@ -75,24 +79,27 @@ class SessionForm extends React.Component {
 
           {this.renderErrors()}
           <div className={`${this.props.formType}-form`}>
-            <label>
-              <input type="text"
+            {extraForm}
+            <div>
+              <input type="email"
                 value={this.state.email}
                 onChange={this.update('email')}
+                required="required"
+                valid="email"
                 className={`${this.props.formType}-input`}
-                placeholder='email'
-              />
-            </label>
-            {extraForm}
-            <label>
+                placeholder='Email Address'
+                />
+            </div>
+            <div className="password-text">
               <input type="password"
                 value={this.state.password}
                 onChange={this.update('password')}
-                className={`${this.props.formType}-form`}
-                placeholder='password'
-              />
-            </label>
-            <input className={`${this.props.formType}-submit`} type="submit" value={this.props.formType} />
+                required="required"
+                className={`${this.props.formType}-input`}
+                placeholder='Password'
+                />
+            </div>
+            <input className={`${this.props.formType}-submit`} type="submit" value={this.props.formType}/>
           </div>
         </form>
         {demoButton}

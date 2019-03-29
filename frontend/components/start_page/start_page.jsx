@@ -18,7 +18,9 @@ const StartPage = () => {
         </div>
         
         <div className="sign-up-header">
-          <img className ="slogan-img" src={window.bestreadssloganURL} />
+          <div className="slogan-img-container">
+            <img className ="slogan-img" src={window.bestreadssloganURL} />
+          </div>
           < SignUpContainer />
         </div>
       </div>

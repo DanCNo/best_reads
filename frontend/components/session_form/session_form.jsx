@@ -4,11 +4,15 @@ import {withRouter} from 'react-router-dom';
 class SessionForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      username: '',
-      email: '',
-      password: ''
-    };
+    if(this.props.location.state){
+      this.state = this.props.location.state.user;
+    } else {
+      this.state = {
+        username: '',
+        email: '',
+        password: ''
+      };
+    }
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleDemo = this.handleDemo.bind(this);
   }
@@ -21,11 +25,20 @@ class SessionForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
+    let form;
+    if(this.props.formType === "signup-page"){
+      form = "signup";
+    } else if(this.props.formType === "login-page"){
+      form = "login";
+    } else {
+      form = this.props.formType;
+    }
+    
     const user = Object.assign({}, this.state);
-    this.props.processForm(user).then(()=> {
-
-      this.props.history.push("/home");
-    }) 
+    this.props.processForm(user).then(
+      (()=> this.props.history.push("/home")),
+      (()=> this.props.history.push({pathname: `/${form}`, state: {user: user}}))
+    );
   }
 
   handleDemo(e) {
@@ -35,7 +48,6 @@ class SessionForm extends React.Component {
   }
 
   renderErrors() {
-    if(this.props.formType === 'signup'){
       return (
         <ul>
           {this.props.errors.map((error, i) => (
@@ -45,12 +57,11 @@ class SessionForm extends React.Component {
           ))}
         </ul>
       );
-      
-    } else { return null } 
-  }
+    }
 
   render() {
-    const extraForm = (this.props.formType === 'signup') ? (
+
+    const extraForm = (this.props.formType === 'signup' || this.props.formType === 'signup-page') ? (
       <>
         <div className="username-text">
           <input
@@ -99,13 +110,12 @@ class SessionForm extends React.Component {
                 placeholder='Password'
                 />
             </div>
-            <input className={`${this.props.formType}-submit`} type="submit" value={this.props.formType}/>
+            <input className={`${this.props.formType}-submit`} type="submit" value="submit"/>
           </div>
         </form>
         {demoButton}
       </div>
     );
-
 
   }
 

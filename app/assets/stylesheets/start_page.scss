@@ -15,7 +15,7 @@
 .start-page-text-best {
   font-size: 47px;
   font-weight: 200;
-  color: #95897d;
+  color: #675544;
 }
 
 .start-page-text-reads {
@@ -78,6 +78,10 @@
   padding: 4px 7px;
   outline: 0;
   -webkit-appearance: none;
+}
+
+.signup-submit:hover {
+  background-color: #fed670;
 }
 
 .signup-form-container {

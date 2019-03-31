@@ -18,26 +18,25 @@ class SessionForm extends React.Component {
   }
 
   update(field) {
-    return e => this.setState({
-      [field]: e.currentTarget.value
-    });
+    
+    return e => {
+      if (this.props.errors.length > 0) {
+        this.props.clearErrors();
+      }
+
+      this.setState({
+        [field]: e.currentTarget.value
+      });
+    }
   }
 
   handleSubmit(e) {
     e.preventDefault();
-    let form;
-    if(this.props.formType === "signup-page"){
-      form = "signup";
-    } else if(this.props.formType === "login-page"){
-      form = "login";
-    } else {
-      form = this.props.formType;
-    }
     
     const user = Object.assign({}, this.state);
     this.props.processForm(user).then(
       (()=> this.props.history.push("/home")),
-      (()=> this.props.history.push({pathname: `/${form}`, state: {user: user}}))
+      (()=> this.props.history.push({pathname: `/${this.props.submitType}`, state: {user: user}}))
     );
   }
 
@@ -48,28 +47,53 @@ class SessionForm extends React.Component {
   }
 
   renderErrors() {
-      return (
-        <ul>
-          {this.props.errors.map((error, i) => (
-            <li key={`error-${i}`}>
-              {error}
-            </li>
-          ))}
-        </ul>
-      );
+      if (this.props.formType === 'login-page' || this.props.formType === 'signup-page'){
+        if(this.props.errors.length > 0){
+          return (
+            <div className={`${this.props.formType}-error-container`}>
+              <ul>
+                {this.props.errors.map((error, i) => (
+                  <li key={`error-${i}`}>
+                    {error}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          );
+
+        }else{
+          return <div className={`${this.props.formType}-error-container-blank`}></div>
+        }
+      }
+    }
+
+    otherSessionLink() {
+      if(this.props.formType === 'signup-page'){
+        return(
+          <div>
+            <Link to="/login" />
+          </div>
+        )
+      } else if(this.props.formType === 'login-page'){
+        return(
+          <div>
+            <Link to="/signup" />
+          </div>
+        )
+      }
     }
 
   render() {
 
-    const extraForm = (this.props.formType === 'signup' || this.props.formType === 'signup-page') ? (
+    const extraForm = (this.props.submitType === 'signup') ? (
       <>
-        <div className="username-text">
+        <div className={`${this.props.formType}-username-text-container`}>
           <input
             type='text'
             value={this.state.username}
             onChange={this.update('username')}
             required="required"
-            className="signup-input"
+            className={`${this.props.formType}-input`}
             placeholder='Name'
           />
         </div>
@@ -87,7 +111,6 @@ class SessionForm extends React.Component {
     return (
       <div className={`${this.props.formType}-form-container`}>
         <form onSubmit={this.handleSubmit} className={`${this.props.formType}-form-box`}>
-
           {this.renderErrors()}
           <div className={`${this.props.formType}-form`}>
             {extraForm}
@@ -110,7 +133,7 @@ class SessionForm extends React.Component {
                 placeholder='Password'
                 />
             </div>
-            <input className={`${this.props.formType}-submit`} type="submit" value="submit"/>
+            <input className={`${this.props.formType}-submit`} type="submit" value={`${this.props.submitType}`}/>
           </div>
         </form>
         {demoButton}

@@ -1,0 +1,203 @@
+.signup-page{
+  background-image: image_url('bestreadsparchment.png');
+  background-size: cover;
+  height: 100vh;
+  width: 100vw;
+}
+
+.login-page{
+  background-image: image_url('bestreadsparchment.png');
+  background-size: cover;
+  height: 100vh;
+  width: 100vw;
+}
+
+.session-page-title {
+  color: #341f10;
+  font-family: "Merriweather", Georgia, "Times New Roman", serif;
+  font-size: 20px;
+}
+
+.signup-page-greeting {
+  font-size: 16px;
+  line-height: 1.45;
+  text-align: center;
+  padding: 5px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.signup-page-error-container {
+  background-color: #fff7c9;
+  color: #333;
+  height: 25px;
+  width: 260px;
+  font-size: 12px;
+  font: bold;
+  box-shadow: 0px 1px 1px 0px #d0d0c8;
+}
+
+.signup-page-error-container-blank {
+  height: 25px;
+  width: 260px;
+}
+
+.login-page-error-container {
+  background-color: #fff7c9;
+  color: #333;
+  height: 25px;
+  widows: 260px;
+  font-size: 12px;
+  font: bold;
+  box-shadow: 0px 1px 1px 0px #d0d0c8;
+}
+
+.login-page-error-container-blank {
+  height: 25px;
+  width: 260px;
+}
+
+.login-page-input {
+  height: 20px;
+  width: 260px;
+  font-size: 13px;
+  font-weight: bold;
+  margin: 4px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  padding: 4px 10px;
+  outline: 0;
+  -webkit-appearance: none;
+}
+
+.login-page-input:focus{
+  background-color: #f2f2ea;
+}
+
+.signup-page-input {
+  height: 20px;
+  width: 260px;
+  font-size: 13px;
+  font-weight: bold;
+  margin: 4px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  padding: 4px 10px;
+  outline: 0;
+  -webkit-appearance: none;
+}
+
+.signup-page-input:focus{
+  background-color: #f2f2ea;
+}
+
+.login-page-submit {
+  height: 40px;
+  width: 90px;
+  font-size: 20px;
+  background-color: rgb(232, 230, 226);
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  // padding: 4px 7px;
+  outline: 0;
+  margin: 10px;
+  -webkit-appearance: none;
+}
+
+.login-page-submit:hover {
+  background-color: rgb(211, 210, 207);
+}
+
+.signup-page-submit {
+  height: 40px;
+  width: 90px;
+  font-size: 20px;
+  background-color: rgb(232, 230, 226);
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  // padding: 4px 7px;
+  outline: 0;
+  -webkit-appearance: none;
+}
+
+.signup-page-submit:hover {
+  background-color: rgb(211, 210, 207);
+}
+
+.session-page-content-container {
+  display: flex;
+  justify-content: center;
+}
+
+
+.signup-page-content-box {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background: white;
+  border: 1px solid #878777;
+  border-radius: 4px;
+  box-shadow: 0px 1px 1px #c2c2b1;
+  box-sizing: border-box;
+  width: 600px;
+  height: 700px;
+  padding: 30px;
+}
+
+.login-page-content-box {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background: white;
+  border: 1px solid #878777;
+  border-radius: 4px;
+  box-shadow: 0px 1px 1px #c2c2b1;
+  box-sizing: border-box;
+  width: 600px;
+  height: 625px;
+  padding: 30px;
+}
+
+.signup-page-form-box{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.login-page-form-box{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.best-reads-text-container {
+  display: flex;
+  justify-content: flex-start;
+  align-content: center;
+  height: 40px;
+  width: 300px;
+}
+
+.session-page-start-link {
+  text-decoration: none;
+  text-decoration-color: none;
+}
+
+.session-page-text-container {
+  display: flex;
+  justify-content: left;
+  padding-left: 40px;
+}
+
+.session-page-text-best {
+  font-size: 35px;
+  font-weight: 200;
+  color: #675544;
+}
+
+.session-page-text-reads {
+  font-size: 35px;
+  font-weight: 300;
+  color: #362111;
+  
+}

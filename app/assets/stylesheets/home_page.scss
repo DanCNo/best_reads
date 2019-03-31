@@ -1,6 +1,7 @@
 .navbar-user-container {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
 }
 .home-page-container {
   display: flex;
@@ -24,6 +25,17 @@
   min-width: 1000px;
 }
 
+.navbar-header-name-container {
+  margin: 5px;
+}
+
+.navbar-logout-button-container {
+  margin: 5px;
+}
+
+.navbar-logout-button {
+  cursor: pointer;
+}
 
 .home-page-bar-text-best {
   font-size: 38px;

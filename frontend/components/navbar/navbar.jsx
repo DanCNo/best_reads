@@ -10,8 +10,8 @@ const Navbar = ({ currentUser, logout }) => {
           <span className="home-page-bar-text-reads">reads</span>
         </div>
         <div className="navbar-user-container">
-          <div className="">
-            <span className="header-name">Welcome, {currentUser.username}  </span>
+          <div className="navbar-header-name-container">
+            <span className="header-name">{currentUser.username}</span>
           </div>
           <div className="navbar-logout-button-container">
             <button className="navbar-logout-button" onClick={logout}>Log Out</button>

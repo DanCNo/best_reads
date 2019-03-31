@@ -10,7 +10,6 @@ class BookShowItem extends React.Component {
   }
 
   render() {
-    debugger
 
     if(!this.props.book){
       return null;

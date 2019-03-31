@@ -43,17 +43,26 @@
   -webkit-appearance: none;
 }
 
+.login-input:focus {
+  border: 1px solid rgb(52, 49, 49);
+}
+
 .login-submit {
   height: 34px;
   width: 65px;
   font-size: 14px;
   color: white;
-  background-color: #43381e;
+  background-color: #342910;
   border: 1px solid #ccc;
   border-radius: 4px;
   padding: 4px 7px;
   outline: 0;
   -webkit-appearance: none;
+}
+
+.login-submit:hover {
+  background-color: #4a3d20;
+  cursor: pointer;
 }
 
 .signup-input {
@@ -66,6 +75,10 @@
   padding: 4px 7px;
   outline: 0;
   -webkit-appearance: none;
+}
+
+.signup-input:focus {
+  border: 1px solid rgb(52, 49, 49);
 }
 
 .signup-submit {
@@ -82,6 +95,7 @@
 
 .signup-submit:hover {
   background-color: #fed670;
+  cursor: pointer;
 }
 
 .signup-form-container {
@@ -109,4 +123,8 @@
   height: 370px;
   flex-direction: column;
   align-items: center;
+}
+
+.demo-button {
+  cursor: pointer;
 }

@@ -71,7 +71,8 @@
 }
 
 .login-page-input:focus{
-  background-color: #f2f2ea;
+  background-color: #fafaea;
+  border: 1px solid rgb(52, 49, 49);
 }
 
 .signup-page-input {
@@ -88,7 +89,8 @@
 }
 
 .signup-page-input:focus{
-  background-color: #f2f2ea;
+  background-color: #fafaea;
+  border: 1px solid rgb(52, 49, 49);
 }
 
 .login-page-submit {
@@ -98,7 +100,6 @@
   background-color: rgb(232, 230, 226);
   border: 1px solid #ccc;
   border-radius: 4px;
-  // padding: 4px 7px;
   outline: 0;
   margin: 10px;
   -webkit-appearance: none;
@@ -106,6 +107,7 @@
 
 .login-page-submit:hover {
   background-color: rgb(211, 210, 207);
+  cursor: pointer;
 }
 
 .signup-page-submit {
@@ -115,13 +117,13 @@
   background-color: rgb(232, 230, 226);
   border: 1px solid #ccc;
   border-radius: 4px;
-  // padding: 4px 7px;
   outline: 0;
   -webkit-appearance: none;
 }
 
 .signup-page-submit:hover {
   background-color: rgb(211, 210, 207);
+  cursor: pointer;
 }
 
 .session-page-content-container {

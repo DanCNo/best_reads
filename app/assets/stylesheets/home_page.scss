@@ -26,11 +26,12 @@
 }
 
 .navbar-header-name-container {
-  margin: 5px;
+  margin: 7px;
+  padding: 4px;
 }
 
 .navbar-logout-button-container {
-  margin: 5px;
+  margin: 7px;
 }
 
 .navbar-logout-button {
@@ -48,6 +49,24 @@
   font-weight: 400;
   color: #362111;
   
+}
+
+.navbar-logout-button {
+  height: 34px;
+  width: 70px;
+  font-size: 14px;
+  color: white;
+  background-color: #342910;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  // padding: 4px 7px;
+  outline: 0;
+  -webkit-appearance: none;
+}
+
+.navbar-logout-button:hover {
+  background-color: #4a3d20;
+  cursor: pointer;
 }
 
 .header-name {

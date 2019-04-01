@@ -24,7 +24,6 @@ export const fetchBooks = () => dispatch => (
 );
 
 export const fetchBook = (id) => dispatch => {
-  debugger
   return APIUtil.fetchBook(id).then(book => (
     dispatch(receiveBook(book))
   ));

@@ -3,36 +3,14 @@ import BookIndexItem from './books_index_item';
 
 class BookIndex extends React.Component {
 
-  constructor(props) {
-    super(props);
-
-    this.state = {coverImgArray: []};
-  }
-
   componentDidMount() {
-    this.props.fetchBooks().then(()=>this.extractUrls());
-    
-    // ((books)=>books.map(
-    //   (book) => {
-    //     fetch(`https://openlibrary.org/api/books?bibkeys=ISBN:${book.isbn_13}&jscmd=data&format=json`).then(
-    //       response => response.json()
-    //     ).then(data => Object.values(data)[0].cover.medium).then(coverUrl => this.state.coverImgArray.push(coverUrl));
-    //   }
-    // ));
-  }
 
-  extractUrls(){
-    this.props.books.map(book => {
-      fetch(`https://openlibrary.org/api/books?bibkeys=ISBN:${book.isbn_13}&jscmd=data&format=json`)
-      .then(
-          response => response.json()
-      )
-      .then(data => Object.values(data)[0].cover.small)
-        .then(coverUrl => this.setState({ coverImgArray: this.state.coverImgArray.concat([coverUrl])})
-    );});
+    this.props.fetchBooks();
+    
   }
 
   render() {
+
     let books = this.props.books.map((book, idx) => {
       
       return <BookIndexItem key={idx} book={book} />
@@ -40,22 +18,22 @@ class BookIndex extends React.Component {
 
     return (
       <>
-        <table>
+        <table className="book-index-table">
           <thead>
             <tr className="book-index-col-namesrow-container">
-              <th className="book-index-col-name-container">
+              <th className="book-index-col-hcover-container">
                 cover
               </th>
-              <th className="book-index-col-name-container">
+              <th className="book-index-col-htitle-container">
                 title
               </th>
-              <th className="book-index-col-name-container">
+              <th className="book-index-col-hauthor-container">
                 author
               </th>
-              <th className="book-index-col-name-container">
+              <th className="book-index-col-hrating-container">
                 rating
               </th>
-              <th className="book-index-col-name-container">
+              <th className="book-index-col-hshelves-container">
                 shelves
               </th>
             </tr>
@@ -63,11 +41,6 @@ class BookIndex extends React.Component {
           <tbody>
             {books}
           </tbody>
-          {/* <div>
-            <ul>
-              {books}
-            </ul>
-          </div> */}
         </table>
         <div>
 

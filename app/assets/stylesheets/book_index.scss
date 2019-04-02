@@ -1,8 +1,84 @@
-.book-index-col-namesrow-container{
-  display: flex;
-  flex-direction: row;
+.book-index-table{
+  width: 750px;
 }
 
-.book-index-col-name-container{
-  padding: 2px 10px;
+.book-index-col-namesrow-container{
+  display: table;
+  font-size: 11px;
+  height: 15px;
+  border-bottom: 1px solid #EBE8D5;
+}
+
+.book-index-col-hcover-container{
+  padding: 12px 5px 5px 0px;
+}
+
+.book-index-col-htitle-container{
+  padding: 12px 5px 5px 0px;
+  width: 180px;
+}
+
+.book-index-col-hauthor-container{
+  padding: 12px 5px 5px 0px;
+  width: 180px;
+}
+
+.book-index-col-hrating-container{
+  padding: 12px 5px 5px 0px;
+  width: 100px;
+  
+}
+
+.book-index-col-hshelves-container{
+  padding: 12px 5px 5px 0px;
+  width: 180px;
+}
+
+.book-index-col-valsrow-container{
+  display: table;
+  border-bottom: 1px solid #EBE8D5;
+}
+
+.book-index-col-cover-container{
+  padding: 12px 5px 5px 0px;
+
+}
+
+.book-index-link{
+  color: #036a63;
+  text-decoration-color: #036a63;
+  text-decoration-line: none;
+}
+
+.book-index-link:hover{
+  text-decoration-line: underline;
+}
+
+.book-index-col-title-container{
+  padding: 12px 5px 5px 0px;
+  font-size: 14px;
+  width: 180px;
+  
+}
+
+.book-index-col-author-container{
+  padding: 12px 5px 5px 0px;
+  font-size: 14px;
+  width: 180px;
+}
+
+.book-index-col-rating-container{
+  font-size: 14px;
+  width: 105px;
+  text-align: center;
+}
+
+.book-index-col-shelves-container{
+  font-size: 14px;
+  width: 180px;
+  text-align: center;
+}
+
+.book-index-cover{
+  width: 40px;
 }

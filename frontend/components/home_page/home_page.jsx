@@ -11,7 +11,7 @@ const HomePage = () => {
           <div className="top-bar-container">
             <NavbarContainer />
           </div>
-          <div>
+          <div className="home-page-content-container">
             <BookIndexContainer />
           </div>
         </main>

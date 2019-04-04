@@ -1,16 +1,17 @@
-// link to show bookshelf and num of books inside ()
+import React from 'react';
+import {Link} from 'react-router-dom'
+// convert div to link to show bookshelf and num of books inside ()
 
 
 
 const BookshelvesIndexItem = ({ bookshelf }) => {
-  let booksCount;
-  // code to figure out bookshelf.books.count
+  const bookCount = bookshelf.book_ids.size ? bookshelf.book_ids.size : 0;
 
   return (
-    <div>
-      <Link>{`${bookshelf.title} (${})`}</Link>
+    <div className="bookshelf-index-item-container">
+      <div className="bookshelf-index-item">{`${bookshelf.title} (${bookCount})`}</div>
     </div>
   );
 };
 
-export default BookIndexItem;
+export default BookshelvesIndexItem;

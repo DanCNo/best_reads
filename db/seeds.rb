@@ -6,11 +6,22 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+Bookshelf.destroy_all
 User.destroy_all
 
 user1 = User.create({username: "PageTurnerismyrealname", email: "test1@gmail.com", password: "bestreads"})
+bookshelf1 = Bookshelf.create({title: "Read", default: true, user_id: user1.id})
+bookshelf2 = Bookshelf.create({title: "Currently Reading", default: true, user_id: user1.id})
+bookshelf3 = Bookshelf.create({title: "Want to Read", default: true, user_id: user1.id})
+bookshelf4 = Bookshelf.create({title: "Custom #1", default: false, user_id: user1.id})
 user2 = User.create({username: "BookCoverJudge", email: "test2@gmail.com", password: "bestreads"})
+bookshelf5 = Bookshelf.create({title: "Read", default: true, user_id: user2.id})
+bookshelf6 = Bookshelf.create({title: "Currently Reading", default: true, user_id: user2.id})
+bookshelf7 = Bookshelf.create({title: "Want to Read", default: true, user_id: user2.id})
 user3 = User.create({username: "IReadUpsideDown", email: "test3@gmail.com", password: "bestreads"})
+bookshelf8 = Bookshelf.create({title: "Read", default: true, user_id: user3.id})
+bookshelf9 = Bookshelf.create({title: "Currently Reading", default: true, user_id: user3.id})
+bookshelf10 = Bookshelf.create({title: "Want to Read", default: true, user_id: user3.id})
 
 
 ActiveRecord::Base.transaction do

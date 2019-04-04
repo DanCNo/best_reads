@@ -9,6 +9,16 @@
   align-items: center;
 }
 
+.home-page-content-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.home-page-bookshelf-index-container {
+  width: 160px;
+  padding: 10px;
+}
+
 .top-bar-container {
   display: flex;
   justify-content: center;

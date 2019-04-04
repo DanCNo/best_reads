@@ -24,9 +24,18 @@ class BookshelvesIndex extends React.Component {
     });
 
     return (
-      <>
-        {bookshelves}
-      </>
+      <div className="bookshelf-index-container">
+        <div className="mybooks_text_container">
+          <span className= "mybooks_text">My Bookshelves</span>
+        </div>
+        <div className="default-bookshelf-container">
+          {bookshelves.slice(0,3)}
+        </div>
+        <div>
+          {bookshelves.slice(3)}
+        </div>
+      </div>
+      
     );
   }
 }

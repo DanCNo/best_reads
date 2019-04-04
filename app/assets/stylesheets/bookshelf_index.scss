@@ -22,3 +22,26 @@
 .default-bookshelf-container {
   border-bottom: 1px solid black;
 }
+
+.add-bookshelf-submit-container {
+  padding: 4px 11px;
+}
+
+.add-bookshelf-submit {
+  background-color: rgb(235, 233, 230);
+  border-radius: 3px;
+  border: 1px solid color rgb(211, 204, 190)
+}
+
+.add-bookshelf-input {
+  border: 1px solid rgb(228, 222, 210);
+  border-radius: 3px;
+  width: 100px;
+  padding: 2px;
+}
+
+.add-bookshelf-form {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}

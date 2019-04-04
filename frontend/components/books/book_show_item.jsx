@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 const fetch = require('node-fetch');
-import NavBarContainer from '../navbar/navbar_container';
 
 class BookShowItem extends React.Component {
 
@@ -72,6 +71,7 @@ class BookShowItem extends React.Component {
                   {this.props.book.isbn_13}
                 </div>
               </div>
+              
             </div>
           </div>
           

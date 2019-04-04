@@ -2,9 +2,10 @@ import { connect } from 'react-redux';
 import { fetchBooks, fetchBook } from "../../actions/book_actions";
 import BookIndex from './books_index';
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state, ownProps) => {
   return({
-    books: Object.values(state.entities.books)
+    books: Object.values(state.entities.books),
+    bookshelf_books: ownProps.bookshelf_books
   });
 };
 

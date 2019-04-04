@@ -6,6 +6,7 @@ class Api::BookshelvesController < ApplicationController
   def create
     @bookshelf = Bookshelf.new(bookshelf_params)
     @bookshelf.default = false;
+    @bookshelf.user_id = current_user.id;
 
     if @bookshelf.save
       render :show
@@ -40,6 +41,7 @@ class Api::BookshelvesController < ApplicationController
     @bookshelf = Bookshelf.find(params[:id])
 
     if @bookshelf
+      @books = @bookshelf.books
       render :show
     else
       render json: ["Bookshelf not found here"], status: 404
@@ -48,13 +50,13 @@ class Api::BookshelvesController < ApplicationController
 
   def destroy
     @bookshelf = Bookshelf.find(params[:id])
-    
+    id = params[:id];
     if @bookshelf
       if @bookshelf.default
         render json: ["Not allowed to destroy default bookshelves"], status: 401
       else
         @bookshelf.destroy
-        render :show
+        render json: id
       end
     else
       render json: ["Bookshelf not found"], status: 404

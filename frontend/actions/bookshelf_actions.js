@@ -5,11 +5,12 @@ export const RECEIVE_BOOKSHELF = "RECEIVE_BOOKSHELF";
 export const REMOVE_BOOKSHELF = "REMOVE_BOOKSHELF";
 export const RECEIVE_SHELVING = "RECEIVE_SHELVING";
 export const REMOVE_SHELVING = "RECEIVE_SHELVING";
+export const RECEIVE_BOOKSHELF_ERRORS = "RECEIVE_BOOKSHELF_ERRORS";
 
-const receiveBookshelf = (bookshelf) => {
+const receiveBookshelf = (response) => {
   return({
     type: RECEIVE_BOOKSHELF,
-    bookshelf: bookshelf
+    response: response
   });
 };
 
@@ -41,17 +42,29 @@ const removeShelving = (id) => {
   });
 };
 
+export const receiveBookshelfErrors = (errors) => {
+  return({
+    type: RECEIVE_BOOKSHELF_ERRORS,
+    errors: errors
+  });
+};
+
 
 export const fetchBookshelves = () => dispatch => (
   ApiUtil.fetchBookshelves().then(bookshelves => dispatch(receiveBookshelves(bookshelves)))
 );
 
 export const fetchBookshelf = (id) => dispatch => (
-  ApiUtil.fetchBookshelf(id).then(bookshelf => dispatch(receiveBookshelf(bookshelf)))
+  ApiUtil.fetchBookshelf(id).then(response => dispatch(receiveBookshelf(response)))
 );
 
 export const createBookshelf = (bookshelf) => dispatch => (
-  ApiUtil.createBookshelf(bookshelf).then(bookshelf => dispatch(receiveBookshelf(bookshelf)))
+  ApiUtil.createBookshelf(bookshelf).then((bookshelf) => {
+    return dispatch(receiveBookshelf(bookshelf));
+  },
+  (errors) => {
+    dispatch(receiveBookshelfErrors(errors.responseJSON));
+  })
 );
 
 export const updateBookshelf = (bookshelf) => dispatch => (
@@ -59,7 +72,7 @@ export const updateBookshelf = (bookshelf) => dispatch => (
 );
 
 export const deleteBookshelf = (id) => dispatch => (
-  ApiUtil.deleteBookshelf(id).then(bookshelf => dispatch(removeBookshelf(bookshelf.id)))
+  ApiUtil.deleteBookshelf(id).then(id => dispatch(removeBookshelf(id)))
 );
 
 export const createShelving = (shelving) => dispatch => (

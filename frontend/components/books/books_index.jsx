@@ -7,17 +7,30 @@ import BookIndexItem from './books_index_item';
 class BookIndex extends React.Component {
 
   componentDidMount() {
-
-    this.props.fetchBooks();
+    
+    if(!this.props.bookshelf_books){
+      this.props.fetchBooks();
+    }
     
   }
 
   render() {
+    let books;
+    if(this.props.bookshelf_books){
+      books = this.props.bookshelf_books.map((book, idx) => {
+        debugger
+        return <BookIndexItem key={idx} book={book} />
+      });
 
-    let books = this.props.books.map((book, idx) => {
-      
-      return <BookIndexItem key={idx} book={book} />
-    });
+    } else {
+      books = this.props.books.map((book, idx) => {
+        
+        return <BookIndexItem key={idx} book={book} />
+      });
+
+    }
+  
+
 
     return (
       <>

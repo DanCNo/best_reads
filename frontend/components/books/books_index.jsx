@@ -1,6 +1,9 @@
 import React from 'react';
 import BookIndexItem from './books_index_item';
 
+// needs to be able to take in props? instead of all books, can do user.books
+// or bookshelf.books
+
 class BookIndex extends React.Component {
 
   componentDidMount() {

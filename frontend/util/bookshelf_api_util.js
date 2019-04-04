@@ -12,14 +12,15 @@ export const fetchBookshelf = id => (
   })
 );
 
-export const createBookshelf = () => (
+export const createBookshelf = bookshelf => (
   $.ajax({
     method: 'POST',
-    url: 'api/bookshelves'
+    url: 'api/bookshelves',
+    data: {bookshelf}
   })
 );
 
-export const updateBookshelf = (bookshelf) => (
+export const updateBookshelf = bookshelf => (
   $.ajax({
     method: 'PATCH',
     url: `api/bookshelves/${bookshelf.id}`,
@@ -27,9 +28,24 @@ export const updateBookshelf = (bookshelf) => (
   })
 );
 
-export const deleteBookshelf = (id) => (
+export const deleteBookshelf = id => (
   $.ajax({
-    method: "DELETE",
+    method: 'DELETE',
     url: `api/bookshelves/${id}`
+  })
+);
+
+export const createShelving = shelving => (
+  $.ajax({
+    method: 'POST',
+    url: 'api/shelvings/',
+    data: {shelving}
+  })
+);
+
+export const deleteShelving = id => (
+  $.ajax({
+    method: 'DELETE',
+    url: `api/shelvings/${id}`
   })
 );

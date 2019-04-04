@@ -5,6 +5,7 @@ class Api::BookshelvesController < ApplicationController
 
   def create
     @bookshelf = Bookshelf.new(bookshelf_params)
+    @bookshelf.default = false;
 
     if @bookshelf.save
       render :show
@@ -22,12 +23,10 @@ class Api::BookshelvesController < ApplicationController
       render json: @bookshelf.errors.full_messages, status: 422
     end 
 
-
   end
 
   def index
-    @bookshelves = Bookshelf.where(user_id: params[:user_id])
-    @bookshelves = Bookshelf.all
+    @bookshelves = Bookshelf.where(user_id: current_user.id)
     
     if @bookshelves
       render :index
@@ -43,20 +42,27 @@ class Api::BookshelvesController < ApplicationController
     if @bookshelf
       render :show
     else
-      render json: ["Bookshelf not found here"], status 404
+      render json: ["Bookshelf not found here"], status: 404
+    end
   end
 
   def destroy
-    if @bookshelf.default == true
-      render json: ["Not allowed to destroy default bookshelves"], status 401
+    @bookshelf = Bookshelf.find(params[:id])
+    
+    if @bookshelf
+      if @bookshelf.default
+        render json: ["Not allowed to destroy default bookshelves"], status: 401
+      else
+        @bookshelf.destroy
+        render :show
+      end
     else
-      @bookshelf.destroy
-      render :show
+      render json: ["Bookshelf not found"], status: 404
     end
   end
 
   def bookshelf_params
-    params.require(:bookshelf).permit(:title, :default, :user_id)
+    params.require(:bookshelf).permit(:title, :user_id)
   end
 
   def bookshelf_owner

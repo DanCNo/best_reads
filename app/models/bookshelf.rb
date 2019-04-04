@@ -1,15 +1,19 @@
 class Bookshelf < ApplicationRecord
-  validates :title, :default, presence: true
+  validates :title, presence: true
+  validates :default, inclusion: {in: [true, false]} 
   validates :title, uniqueness: {scope: :user_id}
-  # validates :max_default_three
 
   belongs_to :user,
   class_name: :User,
   foreign_key: :user_id
 
-  # def max_default_three
-  #   if Bookshelf.all.count { |bookshelf| bookshelf.default } > 3;
-  #     errors.add(:default, "Only 3 default bookcases allowed")
-  #   end
-  # end
+  has_many :shelvings,
+  class_name: :Shelving,
+  foreign_key: :bookshelf_id,
+  dependent: :destroy
+
+  has_many :books,
+  through: :shelvings,
+  source: :book
+
 end

@@ -9,6 +9,8 @@ class User < ApplicationRecord
 	foreign_key: :user_id,
 	dependent: :destroy
 
+	has_many :books, -> { distinct }, through: :bookshelves
+
 	attr_reader :password
 
 	after_initialize :ensure_session_token
@@ -31,9 +33,7 @@ class User < ApplicationRecord
 	def password=(password)
 		@password = password
 		self.password_digest = BCrypt::Password.create(password)
-	end 
-
-	# private
+	end
 
 	def ensure_session_token
 		self.session_token ||= self.reset_session_token!

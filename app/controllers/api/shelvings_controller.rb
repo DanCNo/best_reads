@@ -13,7 +13,7 @@ class Api::ShelvingsController < ApplicationController
   end
 
   def destroy
-    @shelving = Shelving.find(shelving_params)
+    @shelving = Shelving.find(params[:id])
 
     if @shelving
       @shelving.destroy

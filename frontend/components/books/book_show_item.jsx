@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 const fetch = require('node-fetch');
 import NavbarContainer from '../navbar/navbar_container';
+import ShelvingItem from '../bookshelves/shelving_item';
 
 class BookShowItem extends React.Component {
 
@@ -12,10 +13,14 @@ class BookShowItem extends React.Component {
       coverUrl: ""
     };
 
+    this.createShelving = this.props.createShelving.bind(this);
+    this.deleteShelving = this.props.deleteShelving.bind(this);
   }
 
   componentDidMount() {
     this.props.fetchBook(this.props.match.params.bookId).then(() => this.getBookCover());
+    this.props.fetchBookshelves();
+    
   }
 
   getBookCover() {
@@ -30,6 +35,27 @@ class BookShowItem extends React.Component {
     if(!this.props.book){
       return null;
     }
+    const shelvings = this.props.bookshelves.map((bookshelf, idx) => {
+      if(bookshelf.book_ids.includes(this.props.book.id)){
+        const shelvingId = this.props.book.shelving_ids.filter((id) => !bookshelf.shelving_ids.includes(id));
+        
+        return (
+          <div className="shelving-container" key={idx + 1000} onClick={() => this.deleteShelving(shelvingId[0])}>
+            < ShelvingItem key={idx} bookshelf={bookshelf}
+              onBookshelf={true} />
+          </div>
+          )
+      } else {
+        
+        return (
+          <div className="shelving-container" key={idx+1000} onClick={()=> this.createShelving({bookshelf_id: bookshelf.id, book_id: this.props.book.id})}>
+            < ShelvingItem key={idx} bookshelf={bookshelf}
+              onBookshelf={false} />
+          </div>
+        )
+      }
+    });
+
     return (
       <div className="book-show-main-container">
         <div className="top-bar-container">
@@ -80,6 +106,9 @@ class BookShowItem extends React.Component {
                 </div>
               </div>
               
+            </div>
+            <div>
+              {shelvings}
             </div>
           </div>
           

@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
 import { fetchBook } from '../../actions/book_actions';
+import { fetchBookshelves, createShelving, deleteShelving } from '../../actions/bookshelf_actions';
 import BookShowItem from './book_show_item';
 
 const mapStateToProps = (state, ownProps) => {

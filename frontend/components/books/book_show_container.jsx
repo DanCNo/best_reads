@@ -4,13 +4,17 @@ import BookShowItem from './book_show_item';
 
 const mapStateToProps = (state, ownProps) => {
   return ({
-    book: state.entities.books[ownProps.match.params.bookId]
+    book: state.entities.books[ownProps.match.params.bookId],
+    bookshelves: Object.values(state.entities.bookshelves)
   });
 };
 
 const mapDispatchToProps = (dispatch) => {
   return ({
-    fetchBook: (id) => dispatch(fetchBook(id))
+    fetchBook: (id) => dispatch(fetchBook(id)),
+    fetchBookshelves: () => dispatch(fetchBookshelves()),
+    createShelving: (shelving) => dispatch(createShelving(shelving)),
+    deleteShelving: (id) => dispatch(deleteShelving(id))
   });
 };
 

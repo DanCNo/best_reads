@@ -18,10 +18,12 @@ user2 = User.create({username: "BookCoverJudge", email: "test2@gmail.com", passw
 bookshelf5 = Bookshelf.create({title: "Read", default: true, user_id: user2.id})
 bookshelf6 = Bookshelf.create({title: "Currently Reading", default: true, user_id: user2.id})
 bookshelf7 = Bookshelf.create({title: "Want to Read", default: true, user_id: user2.id})
+bookshelf8 = Bookshelf.create({title: "Custom #2", default: false, user_id: user2.id})
 user3 = User.create({username: "IReadUpsideDown", email: "test3@gmail.com", password: "bestreads"})
-bookshelf8 = Bookshelf.create({title: "Read", default: true, user_id: user3.id})
-bookshelf9 = Bookshelf.create({title: "Currently Reading", default: true, user_id: user3.id})
-bookshelf10 = Bookshelf.create({title: "Want to Read", default: true, user_id: user3.id})
+bookshelf9 = Bookshelf.create({title: "Read", default: true, user_id: user3.id})
+bookshelf10 = Bookshelf.create({title: "Currently Reading", default: true, user_id: user3.id})
+bookshelf11 = Bookshelf.create({title: "Want to Read", default: true, user_id: user3.id})
+bookshelf12 = Bookshelf.create({title: "Custom #3", default: false, user_id: user3.id})
 
 
 ActiveRecord::Base.transaction do

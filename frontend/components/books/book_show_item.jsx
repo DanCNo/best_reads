@@ -11,6 +11,7 @@ class BookShowItem extends React.Component {
     this.state = {
       coverUrl: ""
     };
+
   }
 
   componentDidMount() {

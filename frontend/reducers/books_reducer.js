@@ -12,9 +12,6 @@ const booksReducer = (state = {}, action) => {
     case RECEIVE_BOOK:
       return merge({}, state, {[action.book.id]: action.book});
 
-    case RECEIVE_BOOKSHELF:
-      let books = action.response.book || {};
-      return books;
 
     default:
       return state;

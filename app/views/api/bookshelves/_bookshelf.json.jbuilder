@@ -1,3 +1,1 @@
-json.set! bookshelf.id do
-  json.extract! bookshelf, :id, :title, :user_id, :book_ids
-end
+json.extract! bookshelf, :id, :title, :user_id, :book_ids

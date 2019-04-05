@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Navbar = ({ currentUser, logout }) => {
 
@@ -6,8 +7,10 @@ const Navbar = ({ currentUser, logout }) => {
     <>
       <div className="navbar-container">
         <div className="home-page-text">
-          <span className="home-page-bar-text-best">best</span>
-          <span className="home-page-bar-text-reads">reads</span>
+          <Link className="navbar-home-link" to={`/home`}>
+            <span className="home-page-bar-text-best">best</span>
+            <span className="home-page-bar-text-reads">reads</span>
+          </Link>
         </div>
         <div className="navbar-user-container">
           <div className="navbar-header-name-container">

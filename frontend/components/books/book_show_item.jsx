@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 const fetch = require('node-fetch');
+import NavbarContainer from '../navbar/navbar_container';
 
 class BookShowItem extends React.Component {
 
@@ -30,6 +31,12 @@ class BookShowItem extends React.Component {
     }
     return (
       <div className="book-show-main-container">
+        <div className="top-bar-container">
+          <NavbarContainer />
+        </div>
+        <Link className="mybooks-link-container" to={`/bookshelves`}>
+          <span className="mybooks-link">My Books</span>
+        </Link>
         <div className="book-show-head-container">
           <div className="book-show-cover-container">
             <img className="book-show-cover" src={this.state.coverUrl} alt=""/>
@@ -85,7 +92,6 @@ class BookShowItem extends React.Component {
           <div>
 
           </div>
-          <Link to={`/home`}>Home Page</Link>
         </div>
       </div>
     );

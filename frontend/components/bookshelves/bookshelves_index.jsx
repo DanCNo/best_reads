@@ -12,7 +12,7 @@ class BookshelvesIndex extends React.Component {
 
   constructor(props) {
     super(props);
-
+  
     this.state = this.props.bookshelf;
     this.handleSubmit = this.handleSubmit.bind(this);
 
@@ -46,9 +46,9 @@ class BookshelvesIndex extends React.Component {
   }
 
   render() {
-
+  
     let bookshelves = this.props.bookshelves.map((bookshelf, idx) => {
-      const deleteButtonForm = (idx > 2) ? (
+      const deleteButtonForm = (idx > 2 ) ? (
         <div>
           <form onSubmit={() => this.deleteBookshelf(bookshelf.id)}>
             <input type="submit" value="delete" />

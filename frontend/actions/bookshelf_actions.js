@@ -7,10 +7,10 @@ export const RECEIVE_SHELVING = "RECEIVE_SHELVING";
 export const REMOVE_SHELVING = "RECEIVE_SHELVING";
 export const RECEIVE_BOOKSHELF_ERRORS = "RECEIVE_BOOKSHELF_ERRORS";
 
-const receiveBookshelf = (response) => {
+const receiveBookshelf = (bookshelf) => {
   return({
     type: RECEIVE_BOOKSHELF,
-    response: response
+    bookshelf,
   });
 };
 

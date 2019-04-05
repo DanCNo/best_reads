@@ -1,4 +1,5 @@
 import React from 'react';
+import { Route, Redirect, Switch, Link, HashRouter } from 'react-router-dom';
 import NavbarContainer from '../navbar/navbar_container';
 import BookIndexContainer from '../books/books_index_container';
 import BookshelvesIndexContainer from '../bookshelves/bookshelves_index_container';
@@ -12,6 +13,9 @@ const HomePage = () => {
           <div className="top-bar-container">
             <NavbarContainer />
           </div>
+          <Link className="mybooks-link-container" to={`/bookshelves`}>
+            <span className="mybooks-link">My Books</span>
+          </Link>
           <div className="home-page-content-container">
             <div className="home-page-bookshelf-index-container">
               <BookshelvesIndexContainer />

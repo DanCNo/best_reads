@@ -1,0 +1,16 @@
+
+.bookshelf-page-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.bookshelf-page-content-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.bookshelf-page-bookshelf-index-container {
+  width: 160px;
+  padding: 10px;
+}

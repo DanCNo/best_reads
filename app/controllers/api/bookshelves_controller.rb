@@ -9,6 +9,7 @@ class Api::BookshelvesController < ApplicationController
     @bookshelf.user_id = current_user.id;
 
     if @bookshelf.save
+      @books = []
       render :show
     else
       render json: @bookshelf.errors.full_messages, status: 401
@@ -41,7 +42,7 @@ class Api::BookshelvesController < ApplicationController
     @bookshelf = Bookshelf.find(params[:id])
 
     if @bookshelf
-      @books = @bookshelf.books
+      @books = @bookshelf.books || []
       render :show
     else
       render json: ["Bookshelf not found here"], status: 404

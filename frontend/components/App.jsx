@@ -7,6 +7,7 @@ import SignupPage from './session_form/signup_page';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import BookShowContainer from './books/book_show_container';
 import BookshelfShowContainer from './bookshelves/bookshelf_show_container';
+import BookshelfPageContainer from './bookshelves/bookshelf_page_container';
 
 
 const App = () => (
@@ -14,7 +15,8 @@ const App = () => (
     <Switch >
       <ProtectedRoute exact path="/home" component={HomePageContainer} />
       <ProtectedRoute exact path="/books/:bookId" component={BookShowContainer}/>
-      <ProtectedRoute exact path="/bookshelves/:bookshelfId" component={BookshelfShowContainer}/>
+      <ProtectedRoute exact path="/bookshelves/" component={BookshelfPageContainer}/>
+      <ProtectedRoute exact path="/bookshelves/:bookshelfId" component={BookshelfPageContainer}/>
       <AuthRoute path="/login" component={LoginPage} />
       <AuthRoute path="/signup" component={SignupPage}/>
       <AuthRoute exact path="/" component={StartPage} />

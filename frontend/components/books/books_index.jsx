@@ -1,9 +1,6 @@
 import React from 'react';
 import BookIndexItem from './books_index_item';
 
-// needs to be able to take in props? instead of all books, can do user.books
-// or bookshelf.books
-
 class BookIndex extends React.Component {
 
   componentDidMount() {
@@ -17,11 +14,17 @@ class BookIndex extends React.Component {
   render() {
     let books;
     if(this.props.bookshelf_books){
-      books = this.props.bookshelf_books.map((book, idx) => {
-        debugger
+
+      books = Object.values(this.props.bookshelf_books).map((book, idx) => {
+        
         return <BookIndexItem key={idx} book={book} />
       });
 
+    } else if(this.props.books.length > 0 && this.props.history && this.props.history.location.pathname ==='/bookshelves'){
+        
+        books = this.props.books.filter(book => this.props.currentUser.book_ids.includes(book.id)).map((book, idx) => {
+          return <BookIndexItem key={idx} book={book} />
+        });
     } else {
       books = this.props.books.map((book, idx) => {
         
@@ -30,8 +33,6 @@ class BookIndex extends React.Component {
 
     }
   
-
-
     return (
       <>
         <table className="book-index-table">

@@ -35,10 +35,10 @@ const receiveShelving = (shelving) => {
   });
 };
 
-const removeShelving = (id) => {
+const removeShelving = (shelving) => {
   return({
     type: REMOVE_SHELVING,
-    shelvingId: id
+    shelvingId: shelving
   });
 };
 

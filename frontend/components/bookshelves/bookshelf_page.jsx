@@ -22,12 +22,7 @@ class BookshelfPage extends React.Component {
 
   render() {
     
-    // let user_books = [];
-    // if(this.props.books){
-      
-    //   user_books = this.props.currentUser.book_ids.map((id) => 
-    //     this.props.books[id]);
-    // }
+  
     if(!this.props.currentUser){
       return null;
     }

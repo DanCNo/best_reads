@@ -6,7 +6,7 @@ class Api::ShelvingsController < ApplicationController
     @shelving = Shelving.new(shelving_params)
     
     if @shelving.save
-      # @book = Book.find(@shelving.book_id)
+      
       render "api/shelvings/show"
     else
       render json: ["This book already exists"], status: 401
@@ -14,11 +14,12 @@ class Api::ShelvingsController < ApplicationController
   end
 
   def destroy
+    
     @shelving = Shelving.find(params[:id])
     if @shelving
-      # bookId = @shelving.book_id
+      
       @shelving.destroy
-      # @book = Book.find(bookId)
+      
       render "api/shelvings/show"
     else
       render json ["Book not found"], status: 404
@@ -30,3 +31,4 @@ class Api::ShelvingsController < ApplicationController
   end
 
 end
+

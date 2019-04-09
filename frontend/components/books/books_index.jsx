@@ -12,22 +12,23 @@ class BookIndex extends React.Component {
   }
 
   render() {
-    let books;
+    let displayBooks;
     if(this.props.bookshelf_books){
 
-      books = Object.values(this.props.bookshelf_books).map((book, idx) => {
-        
+      displayBooks = Object.values(this.props.bookshelf_books).map((book, idx) => {
+        debugger
         return <BookIndexItem key={idx} book={book} />
       });
 
     } else if(this.props.books.length > 0 && this.props.history && this.props.history.location.pathname ==='/bookshelves'){
         
-        books = this.props.books.filter(book => this.props.currentUser.book_ids.includes(book.id)).map((book, idx) => {
+        displayBooks = this.props.books.filter(book => this.props.currentUser.book_ids.includes(book.id)).map((book, idx) => {
+          debugger
           return <BookIndexItem key={idx} book={book} />
         });
     } else {
-      books = this.props.books.map((book, idx) => {
-        
+      displayBooks = this.props.books.map((book, idx) => {
+        debugger
         return <BookIndexItem key={idx} book={book} />
       });
 
@@ -56,7 +57,7 @@ class BookIndex extends React.Component {
             </tr>
           </thead>
           <tbody>
-            {books}
+            {displayBooks}
           </tbody>
         </table>
         <div>

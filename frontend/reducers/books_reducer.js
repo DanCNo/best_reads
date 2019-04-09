@@ -17,12 +17,14 @@ const booksReducer = (state = {}, action) => {
       newState = merge({}, state);
       const addToBookshelf = newState[action.shelving.book_id];
       addToBookshelf.bookshelf_ids.push(action.shelving.bookshelf_id);
+      addToBookshelf.shelving_ids.push(action.shelving.id);
       return newState;
 
     case REMOVE_SHELVING:
       newState = merge({}, state);
       const removeFromBookshelf = newState[action.shelving.book_id];
       removeFromBookshelf.bookshelf_ids = removeFromBookshelf.bookshelf_ids.filter(id => id !== action.shelving.bookshelf_id);
+      removeFromBookshelf.shelving_ids = removeFromBookshelf.shelving_ids.filter(id => id !== action.shelving.id);
       return newState; 
 
     default:

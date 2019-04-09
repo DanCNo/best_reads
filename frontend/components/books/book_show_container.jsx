@@ -4,7 +4,6 @@ import { fetchBookshelves, createShelving, deleteShelving } from '../../actions/
 import BookShowItem from './book_show_item';
 
 const mapStateToProps = (state, ownProps) => {
-  debugger
   return ({
     book: state.entities.books[ownProps.match.params.bookId],
     bookshelves: Object.values(state.entities.bookshelves)

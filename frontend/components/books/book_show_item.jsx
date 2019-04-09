@@ -32,9 +32,7 @@ class BookShowItem extends React.Component {
   }
 
   handleShelving(id){
-    e.preventDefault();
-    this.deleteShelving(id);
-    setState({coverUrl: ''});
+    this.deleteShelving(id).then(this.props.fetchBookshelves()).then(this.props.fetchBook(this.props.match.params.bookId)).then(()=> this.getBookCover());
   }
 
   render() {

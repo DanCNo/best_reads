@@ -16,19 +16,19 @@ class BookIndex extends React.Component {
     if(this.props.bookshelf_books){
 
       displayBooks = Object.values(this.props.bookshelf_books).map((book, idx) => {
-        debugger
+        
         return <BookIndexItem key={idx} book={book} />
       });
 
     } else if(this.props.books.length > 0 && this.props.history && this.props.history.location.pathname ==='/bookshelves'){
         
         displayBooks = this.props.books.filter(book => this.props.currentUser.book_ids.includes(book.id)).map((book, idx) => {
-          debugger
+          
           return <BookIndexItem key={idx} book={book} />
         });
     } else {
       displayBooks = this.props.books.map((book, idx) => {
-        debugger
+        
         return <BookIndexItem key={idx} book={book} />
       });
 

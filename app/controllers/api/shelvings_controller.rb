@@ -1,12 +1,13 @@
 class Api::ShelvingsController < ApplicationController
 
-  before_action :ensure_logged_in, only: [:create]
+  before_action :ensure_logged_in, only: [:create, :destroy]
 
   def create
     @shelving = Shelving.new(shelving_params)
-
+    
     if @shelving.save
-      render :show
+      # @book = Book.find(@shelving.book_id)
+      render "api/shelvings/show"
     else
       render json: ["This book already exists"], status: 401
     end
@@ -14,9 +15,11 @@ class Api::ShelvingsController < ApplicationController
 
   def destroy
     @shelving = Shelving.find(params[:id])
-
     if @shelving
+      # bookId = @shelving.book_id
       @shelving.destroy
+      # @book = Book.find(bookId)
+      render "api/shelvings/show"
     else
       render json ["Book not found"], status: 404
     end

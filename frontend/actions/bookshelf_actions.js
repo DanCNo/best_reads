@@ -38,7 +38,7 @@ const receiveShelving = (shelving) => {
 const removeShelving = (shelving) => {
   return({
     type: REMOVE_SHELVING,
-    shelvingId: shelving
+    shelving: shelving
   });
 };
 

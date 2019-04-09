@@ -18,8 +18,8 @@ class BookShowItem extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchBook(this.props.match.params.bookId).then(() => this.getBookCover());
-    this.props.fetchBookshelves();
+    this.props.fetchBookshelves().then(this.props.fetchBook(this.props.match.params.bookId)).then(() => this.getBookCover());
+    // this.props.fetchBookshelves();
     
   }
 
@@ -31,18 +31,24 @@ class BookShowItem extends React.Component {
     }
   }
 
+  handleShelving(id){
+    e.preventDefault();
+    this.deleteShelving(id);
+    setState({coverUrl: ''});
+  }
+
   render() {
     if(!this.props.book){
       return null;
     }
     const shelvings = this.props.bookshelves.map((bookshelf, idx) => {
       if(bookshelf.book_ids.includes(this.props.book.id)){
-        const shelvingId = this.props.book.shelving_ids.filter((id) => !bookshelf.shelving_ids.includes(id));
-        
+        const shelvingId = this.props.book.shelving_ids.filter((id) => bookshelf.shelving_ids.includes(id));
         return (
-          <div className="shelving-container" key={idx + 1000} onClick={() => this.deleteShelving(shelvingId[0])}>
+          <div className="shelving-container" key={idx + 1000} onClick={() => this.handleShelving(shelvingId[0])}>
             < ShelvingItem key={idx} bookshelf={bookshelf}
               onBookshelf={true} />
+            <div>{shelvingId}</div>
           </div>
           )
       } else {

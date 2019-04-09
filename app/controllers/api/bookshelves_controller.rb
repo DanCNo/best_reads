@@ -1,7 +1,7 @@
 class Api::BookshelvesController < ApplicationController
 
   before_action :ensure_logged_in, only: [:create]
-  before_action :bookshelf_owner, only: [:destroy, :update]
+  # before_action :bookshelf_owner, only: [:destroy, :update]
 
   def create
     @bookshelf = Bookshelf.new(bookshelf_params)

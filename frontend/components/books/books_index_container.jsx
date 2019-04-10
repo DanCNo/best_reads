@@ -7,6 +7,7 @@ const mapStateToProps = (state, ownProps) => {
   return({
     books: Object.values(state.entities.books),
     bookshelf_books: ownProps.bookshelf_books,
+    bookshelves: state.entities.bookshelves,
     currentUser: state.entities.users[state.session.id],
   });
 };

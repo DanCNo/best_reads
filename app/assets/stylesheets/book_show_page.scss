@@ -96,11 +96,16 @@
   align-items: center;
 }
 
-.shelving-container{
+.shelving-button-container{
   color: #036a63;
   font-size: 14px;
+  background-color: #ebe9e6;
+  border-radius: 3px;
+  padding-left: 5px;
 }
 
-.shelving-container:hover{
+.shelving-button-container:hover{
   cursor: pointer;
+  background-color:  rgb(219, 216, 211);
+  padding-left: 5px;
 }

@@ -33,6 +33,11 @@
   border: 1px solid color rgb(211, 204, 190)
 }
 
+.add-bookshelf-submit:hover {
+  cursor: pointer;
+  background-color: rgb(219, 216, 211);
+}
+
 .add-bookshelf-input {
   border: 1px solid rgb(228, 222, 210);
   border-radius: 3px;
@@ -49,4 +54,9 @@
 .delete-bookshelf-submit{
   background-color: #ebe9e6;
   border-radius: 3px;
+}
+
+.delete-bookshelf-submit:hover {
+  cursor: pointer;
+  background-color: rgb(219, 216, 211);
 }

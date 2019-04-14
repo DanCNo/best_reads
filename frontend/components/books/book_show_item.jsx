@@ -20,7 +20,8 @@ class BookShowItem extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchBookshelves().then(this.props.fetchBook(this.props.match.params.bookId))
+    this.props.fetchBookshelves()
+    .then(this.props.fetchBook(this.props.match.params.bookId))
     .then(() => this.getBookCover());
     
     
@@ -58,7 +59,7 @@ class BookShowItem extends React.Component {
         const shelvingId = book.shelving_ids.filter((id) => bookshelf.shelving_ids.includes(id));
         
         return (
-          <button className="shelving-container" key={idx + 1000} onClick={() => this.handleDeleteShelving(shelvingId[0])}>
+          <button className="shelving-button-container" key={idx + 1000} onClick={() => this.handleDeleteShelving(shelvingId[0])}>
             < ShelvingItem key={idx} bookshelf={bookshelf}
               onBookshelf={true} />
           </button>
@@ -66,7 +67,7 @@ class BookShowItem extends React.Component {
       } else {
         
         return (
-          <button className="shelving-container" key={idx+1000} onClick={()=> this.handleCreateShelving({bookshelf_id: bookshelf.id, book_id: book.id})}>
+          <button className="shelving-button-container" key={idx+1000} onClick={()=> this.handleCreateShelving({bookshelf_id: bookshelf.id, book_id: book.id})}>
             < ShelvingItem key={idx} bookshelf={bookshelf}
               onBookshelf={false} />
           </button>
@@ -79,12 +80,15 @@ class BookShowItem extends React.Component {
         <div className="top-bar-container">
           <NavbarContainer />
         </div>
-        <Link className="mybooks-link-container" to={`/bookshelves`}>
-          <span className="mybooks-link">My Books</span>
-        </Link>
+        <div className="mybooks-link-container">
+          <Link className="mybooks-link" to={`/bookshelves`}>
+            <span className="mybooks-link-text">My Books</span>
+          </Link>
+        </div>
         <div className="book-show-head-container">
           <div className="book-show-cover-container">
             <img className="book-show-cover" src={this.state.coverUrl} alt=""/>
+            {shelvings}
           </div>
           <div className="book-show-info-container">
             <div className="book-show-title-container">
@@ -125,9 +129,7 @@ class BookShowItem extends React.Component {
               </div>
               
             </div>
-            <div>
-              {shelvings}
-            </div>
+            
           </div>
           
         </div>

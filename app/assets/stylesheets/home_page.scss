@@ -84,11 +84,15 @@
 }
 
 .mybooks-link-container {
+  width: 975px;
+}
+
+.mybooks-link {
   text-decoration: none;
   color: #362111;
 }
 
-.mybooks-link-container:hover {
+.mybooks-link:hover {
   text-decoration: underline;
 }
 

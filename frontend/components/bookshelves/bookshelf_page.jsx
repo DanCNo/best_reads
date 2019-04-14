@@ -34,9 +34,9 @@ class BookshelfPage extends React.Component {
           <div className="top-bar-container">
             <NavbarContainer />
           </div>
-          <div>
-            <Link className="mybooks-link-container" to={`/bookshelves`}>
-              <span className="mybooks-link">My Books</span>     
+          <div className="mybooks-link-container">
+            <Link className="mybooks-link" to={`/bookshelves`}>
+              <span className="mybooks-link-text">My Books</span>     
             </Link>
           </div>
           <div className="bookshelf-page-content-container">

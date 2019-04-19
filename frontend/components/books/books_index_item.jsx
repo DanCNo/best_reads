@@ -22,7 +22,7 @@ const BookIndexItem = ({ book, bookshelves }) => {
     <tr className="book-index-col-valsrow-container">
       <td className="book-index-col-cover-container">
         <Link to={`/books/${book.id}`}>
-          <BookIndexCover isbn={book.isbn_13}/>
+          <BookIndexCover book={book}/>
         </Link>
       </td >
       <td className="book-index-col-title-container">

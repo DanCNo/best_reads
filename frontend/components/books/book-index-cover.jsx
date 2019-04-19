@@ -7,21 +7,21 @@ class BookIndexCover extends React.Component {
     super(props);
 
     this.state = {
-      coverUrl: ""
+      coverUrl: this.props.book.cover_url
     };
   }
 
   componentDidMount() {
-    this.getBookCover();
+    // this.getBookCover();
   }
 
-  getBookCover() {
-    if (this.props.isbn) {
-      fetch(`https://openlibrary.org/api/books?bibkeys=ISBN:${this.props.isbn}&jscmd=data&format=json`).then(
-        response => response.json()
-      ).then(data => Object.values(data)[0].cover.small).then(coverUrl => this.setState({ coverUrl }));
-    }
-  }
+  // getBookCover() {
+  //   if (this.props.isbn) {
+  //     fetch(`https://openlibrary.org/api/books?bibkeys=ISBN:${this.props.isbn}&jscmd=data&format=json`).then(
+  //       response => response.json()
+  //     ).then(data => Object.values(data)[0].cover.small).then(coverUrl => this.setState({ coverUrl }));
+  //   }
+  // }
 
   render(){
     return (

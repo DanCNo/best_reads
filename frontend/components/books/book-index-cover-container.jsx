@@ -4,7 +4,7 @@ import BookIndexCover from './book-index-cover';
 const mapStateToProps = (state, ownProps) => {
 
   return ({
-    isbn: ownProps.isbn
+    book: ownProps.book
   });
 };
 

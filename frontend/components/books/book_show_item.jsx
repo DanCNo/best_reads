@@ -20,18 +20,18 @@ class BookShowItem extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchBookshelves().then(this.props.fetchBook(this.props.match.params.bookId))
-    .then(() => this.getBookCover());
+    // this.props.fetchBookshelves().then(this.props.fetchBook(this.props.match.params.bookId))
+    // .then(() => this.getBookCover());
     
     
   }
 
   getBookCover() {
-    if (this.props.book) {
-      fetch(`https://openlibrary.org/api/books?bibkeys=ISBN:${this.props.book.isbn_13}&jscmd=data&format=json`).then(
-        response => response.json()
-      ).then(data => Object.values(data)[0].cover.medium).then(coverUrl => this.setState({ coverUrl }));
-    }
+    // if (this.props.book) {
+    //   fetch(`https://openlibrary.org/api/books?bibkeys=ISBN:${this.props.book.isbn_13}&jscmd=data&format=json`).then(
+    //     response => response.json()
+    //   ).then(data => Object.values(data)[0].cover.medium).then(coverUrl => this.setState({ coverUrl }));
+    // }
   }
 
   handleDeleteShelving(id){
@@ -84,7 +84,9 @@ class BookShowItem extends React.Component {
         </Link>
         <div className="book-show-head-container">
           <div className="book-show-cover-container">
-            <img className="book-show-cover" src={this.state.coverUrl} alt=""/>
+            <img className="book-show-cover" src={this.props.book.cover_url}
+            // {this.state.coverUrl} 
+            alt=""/>
           </div>
           <div className="book-show-info-container">
             <div className="book-show-title-container">

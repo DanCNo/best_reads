@@ -11,18 +11,6 @@ class BookIndexCover extends React.Component {
     };
   }
 
-  componentDidMount() {
-    // this.getBookCover();
-  }
-
-  // getBookCover() {
-  //   if (this.props.isbn) {
-  //     fetch(`https://openlibrary.org/api/books?bibkeys=ISBN:${this.props.isbn}&jscmd=data&format=json`).then(
-  //       response => response.json()
-  //     ).then(data => Object.values(data)[0].cover.small).then(coverUrl => this.setState({ coverUrl }));
-  //   }
-  // }
-
   render(){
     return (
       <img className="book-index-cover" src={this.state.coverUrl} />

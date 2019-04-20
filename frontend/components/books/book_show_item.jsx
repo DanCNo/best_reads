@@ -9,10 +9,6 @@ class BookShowItem extends React.Component {
   constructor(props){
     super(props);
 
-    this.state = {
-      coverUrl: ""
-    };
-
     this.createShelving = this.props.createShelving.bind(this);
     this.deleteShelving = this.props.deleteShelving.bind(this);
     this.handleDeleteShelving = this.handleDeleteShelving.bind(this);
@@ -20,8 +16,8 @@ class BookShowItem extends React.Component {
   }
 
   componentDidMount() {
-    // this.props.fetchBookshelves().then(this.props.fetchBook(this.props.match.params.bookId))
-    // .then(() => this.getBookCover());
+    this.props.fetchBookshelves();
+    this.props.fetchBook(this.props.match.params.bookId);
     
     
   }
@@ -78,9 +74,10 @@ class BookShowItem extends React.Component {
         </div>
         <div className="book-show-head-container">
           <div className="book-show-cover-container">
-            <img className="book-show-cover" src={this.props.book.cover_url}
-            // {this.state.coverUrl} 
-            alt=""/>
+            <img className="book-show-cover" src={this.props.book.cover_url} alt=""/>
+            <div className="book-show-shelvings-container">
+              {shelvings}
+            </div>
           </div>
           <div className="book-show-info-container">
             <div className="book-show-title-container">
@@ -121,9 +118,7 @@ class BookShowItem extends React.Component {
               </div>
               
             </div>
-          <div>
-            {shelvings}  
-          </div>  
+            
           </div>
           
         </div>

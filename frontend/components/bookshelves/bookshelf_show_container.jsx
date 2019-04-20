@@ -1,5 +1,3 @@
-// bookshelf.books is the books passed to bookshelf show
-
 import { connect } from 'react-redux';
 import { fetchBookshelf } from "../../actions/bookshelf_actions";
 import { fetchBooks } from "../../actions/book_actions";

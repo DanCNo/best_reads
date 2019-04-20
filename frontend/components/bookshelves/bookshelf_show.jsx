@@ -27,7 +27,7 @@ class BookshelfShow extends React.Component {
     return (
       <div>
         <div>
-          Bookshelf Title: {this.props.bookshelf.title}
+          Bookshelf: {this.props.bookshelf.title}
         </div>
         <div>
           <BookIndexContainer bookshelf_books={bookshelf_books}/>

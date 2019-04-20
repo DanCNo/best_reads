@@ -10,7 +10,7 @@ const BookIndexItem = ({ book, bookshelves }) => {
   }
   const displayBookshelves = bookshelves;
   let shelfList;
-  if(displayBookshelves && displayBookshelves.length > 0){
+  if(displayBookshelves && Object.values(displayBookshelves).length > 0){
     shelfList = book.bookshelf_ids.map((id) => {
       return displayBookshelves[id].title;
     }).join(", ");

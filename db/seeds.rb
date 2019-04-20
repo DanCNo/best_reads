@@ -36,7 +36,8 @@ ActiveRecord::Base.transaction do
       'author' => 'John Irving',
       'pages' => 637,
       'year_published' => 1990,
-      'isbn_13' => 9780552135399
+      'isbn_13' => 9780552135399,
+      'cover_url' => 'https://covers.openlibrary.org/b/id/8344967-M.jpg'
     },
     {
       'title' => 'Leviathan Wakes',
@@ -44,7 +45,8 @@ ActiveRecord::Base.transaction do
       'author' => 'James S.A. Corey',
       'pages' => 582,
       'year_published' => 2011,
-        'isbn_13' => 9780316129084
+      'isbn_13' => 9780316129084,
+      'cover_url' => 'https://covers.openlibrary.org/b/id/8185009-M.jpg'
     },
     {
       'title' => 'Guns, Germs, and Steel: The Fates of Human Societies',
@@ -52,7 +54,8 @@ ActiveRecord::Base.transaction do
       'author' => 'Jared Diamond',
       'pages' => 518,
       'year_published' => 2005,
-      'isbn_13' => 9780393061314
+      'isbn_13' => 9780393061314,
+      'cover_url' => 'https://covers.openlibrary.org/b/id/248107-M.jpg'
     },
     {
       'title' => 'The Woman in White',
@@ -60,7 +63,8 @@ ActiveRecord::Base.transaction do
       'author' => 'Wilkie Collins',
       'pages' => 565,
       'year_published' => 1860,
-      'isbn_13' => 9780679405634
+      'isbn_13' => 9780679405634,
+      'cover_url' => 'https://covers.openlibrary.org/b/id/417326-M.jpg'
     },
     {
       'title' => 'Me Talk Pretty One Day',
@@ -68,7 +72,8 @@ ActiveRecord::Base.transaction do
       'author' => 'David Sedaris',
       'pages' => 272,
       'year_published' => 2000,
-      'isbn_13' => 9780316777728
+      'isbn_13' => 9780316777728,
+      'cover_url' => 'https://covers.openlibrary.org/b/id/190274-M.jpg'
     },
     {
       'title' => 'The Princess Bride',
@@ -76,7 +81,8 @@ ActiveRecord::Base.transaction do
       'author' => 'William Goldman',
       'pages' => 398,
       'year_published' => 1999,
-      'isbn_13' => 9780808586999
+      'isbn_13' => 9780808586999,
+      'cover_url' => 'https://covers.openlibrary.org/b/id/592218-M.jpg'
     },
     {
       'title' => 'Calvin and Hobbes',
@@ -84,7 +90,8 @@ ActiveRecord::Base.transaction do
       'author' => 'Bill Watterson',
       'pages' => 127,
       'year_published' => 1999,
-      'isbn_13' => 9780833554536
+      'isbn_13' => 9780833554536,
+      'cover_url' => 'https://covers.openlibrary.org/b/id/1578529-M.jpg'
     },
     {
       'title' => 'Kitchen',
@@ -92,7 +99,8 @@ ActiveRecord::Base.transaction do
       'author' => 'Banana Yoshimoto',
       'pages' => 152,
       'year_published' => 1993,
-      'isbn_13' => 9780671880187
+      'isbn_13' => 9780671880187,
+      'cover_url' => 'https://covers.openlibrary.org/b/id/6627473-M.jpg'
     },
     {
       'title' => 'The Man Who Mistook His Wife for a Hat',
@@ -100,7 +108,8 @@ ActiveRecord::Base.transaction do
       'author' => 'Oliver Sacks',
       'pages' => 243,
       'year_published' => 1998,
-      'isbn_13' => 9780684853949
+      'isbn_13' => 9780684853949,
+      'cover_url' => 'https://covers.openlibrary.org/b/id/8103158-M.jpg'
     },
     {
       'title' => 'The French chef cookbook',
@@ -108,7 +117,8 @@ ActiveRecord::Base.transaction do
       'author' => 'Julia Child',
       'pages' => 467,
       'year_published' => 1976,
-      'isbn_13' => 9780375710063
+      'isbn_13' => 9780375710063,
+      'cover_url' => 'https://covers.openlibrary.org/b/id/229001-M.jpg'
     },
     {
       'title' => 'Cat\'s Cradle',
@@ -116,7 +126,8 @@ ActiveRecord::Base.transaction do
       'author' => 'Kurt Vonnegut',
       'pages' => 224,
       'year_published' => 2010,
-      'isbn_13' => 9780575081956
+      'isbn_13' => 9780575081956,
+      'cover_url' => 'https://covers.openlibrary.org/b/id/7997173-M.jpg'
     },
     {
       'title' => 'The Hitchhiker\'s Guide to the Galaxy',
@@ -124,7 +135,8 @@ ActiveRecord::Base.transaction do
       'author' => 'Douglas Adams',
       'pages' => 815,
       'year_published' => 1996,
-      'isbn_13' => 9780517149256
+      'isbn_13' => 9780517149256,
+      'cover_url' => 'https://covers.openlibrary.org/b/id/7892560-M.jpg'
     },
     {
       'title' => 'Frankenstein',
@@ -132,7 +144,8 @@ ActiveRecord::Base.transaction do
       'author' => 'Mary Shelley',
       'pages' => 212,
       'year_published' => 2000,
-      'isbn_13' => 9780451527714
+      'isbn_13' => 9780451527714,
+      'cover_url' => 'https://covers.openlibrary.org/b/id/295676-M.jpg'
     },
     {
       'title' => 'Cosmos',
@@ -140,7 +153,116 @@ ActiveRecord::Base.transaction do
       'author' => 'Carl Sagan',
       'pages' => 432,
       'year_published' => 2013,
-      'isbn_13' => 9780345539434
+      'isbn_13' => 9780345539434,
+      'cover_url' => 'https://covers.openlibrary.org/b/id/8290911-M.jpg'
+    },
+    {
+      'title' => 'Mountains Beyond Mountains',
+      'description' => 'The true story of Dr. Paul Farmer and his quest to cure the world.',
+      'author' => 'Tracy Kidder',
+      'pages' => 336,
+      'year_published' => 2004,
+      'isbn_13' => 9780812973013,
+      'cover_url' => 'https://covers.openlibrary.org/b/id/8290911-M.jpg'
+    },
+    {
+      'title' => 'Snow Crash',
+      'description' => 'Within the virtual Metaverse, Hiro uncovers a plot of biblical proportions to take over the world.',
+      'author' => 'Neal Stephenson',
+      'pages' => 440,
+      'year_published' => 2000,
+      'isbn_13' => 9780553380958,
+      'cover_url' => 'https://covers.openlibrary.org/b/id/7885469-M.jpg'
+    },
+    {
+      'title' => 'The Little Prince',
+      'description' => 'The Little Prince tells his story to the pilot of how he came to Earth.',
+      'author' => 'Antoine de Saint-Exupéry',
+      'pages' => 168,
+      'year_published' => 2005,
+      'isbn_13' => 9780786275397,
+      'cover_url' => 'https://covers.openlibrary.org/b/id/1472834-M.jpg'
+    },
+    {
+      'title' => 'The Trumpet of the Swan',
+      'description' => 'A mute Trumpeter swan named Louis learns to play the trumpet so that he can woo his love.',
+      'author' => 'E. B. White',
+      'pages' => 272,
+      'year_published' => 2000,
+      'isbn_13' => 9780060289362,
+      'cover_url' => 'https://covers.openlibrary.org/b/id/25057-M.jpg'
+    },
+    {
+      'title' => 'Where the Sidewalk Ends',
+      'description' => 'A collection of poems by Shel Silverstein',
+      'author' => 'Shel Silverstein',
+      'pages' => 176,
+      'year_published' => 2002,
+      'isbn_13' => 9780060513030,
+      'cover_url' => 'https://covers.openlibrary.org/b/id/26477-M.jpg'
+    },
+    {
+      'title' => 'One Hundred Years of Solitude',
+      'description' => 'The story of the Buendia family and the conflict between the desire for solitude and the need for love.',
+      'author' => 'Gabriel Garcia Marquez',
+      'pages' => 417,
+      'year_published' => 2003,
+      'isbn_13' => 9780060531041,
+      'cover_url' => 'https://covers.openlibrary.org/b/id/27764-M.jpg'
+    },
+    {
+      'title' => 'The Count of Monte Cristo',
+      'description' => 'A young sailor is unjustly imprisoned, escapes and takes revenge on the men who ruined his life.',
+      'author' => 'Alexandre Dumas',
+      'pages' => 1276,
+      'year_published' => 2003,
+      'isbn_13' => 9780140449266,
+      'cover_url' => 'https://covers.openlibrary.org/b/id/104354-M.jpg'
+    },
+    {
+      'title' => 'And Then There Were None',
+      'description' => 'Ten strangers are lured to an island where they are killed off one by one by someone amongst them.',
+      'author' => 'Agatha Christie',
+      'pages' => 264,
+      'year_published' => 2004,
+      'isbn_13' => 9780312330873,
+      'cover_url' => 'https://covers.openlibrary.org/b/id/180228-M.jpg'
+    },
+    {
+      'title' => 'Gardens of the Moon',
+      'description' => 'Bled dry by interminable warfare and infighting, the vast, sprawling Malazan empire simmers with discontent.',
+      'author' => 'Steven Erikson',
+      'pages' => 496,
+      'year_published' => 2009,
+      'isbn_13' => 9780765322883,
+      'cover_url' => 'https://covers.openlibrary.org/b/id/6304201-M.jpg'
+    },
+    {
+      'title' => 'Never let me go',
+      'description' => 'Kathy, a clone about to donate all her organs and die, reflects on her past.',
+      'author' => 'Kazuo Ishiguro',
+      'pages' => 288,
+      'year_published' => 2006,
+      'isbn_13' => 9781400078776,
+      'cover_url' => 'https://covers.openlibrary.org/b/id/6425427-M.jpg'
+    },
+    {
+      'title' => 'Jurassic Park',
+      'description' => 'Dinosaurs roam the earth again at Jurassic Park but something goes wrong.',
+      'author' => 'Michael Crichton',
+      'pages' => 467,
+      'year_published' => 2006,
+      'isbn_13' => 9780307348135,
+      'cover_url' => 'https://covers.openlibrary.org/b/id/168157-M.jpg'
+    },
+    {
+      'title' => 'Silas Marner',
+      'description' => 'Silas Marner finds redemption in raising an abandoned child.',
+      'author' => 'George Eliot',
+      'pages' => 186,
+      'year_published' => 1981,
+      'isbn_13' => 9780553212297,
+      'cover_url' => 'https://covers.openlibrary.org/b/id/368435-M.jpg'
     }
   ]
 

@@ -1,14 +1,12 @@
 class Review < ApplicationRecord
-  # validates :title
-
-
-  # validates :title, :description, :author, :pages, :year_published, :isbn_13, :cover_url, presence: true
+  validates :rating, presence: true
+  validates :book_id, uniqueness: {scope: :author_id}
   
-  # has_many :shelvings,
-  # class_name: :Shelving,
-  # foreign_key: :book_id
+  belongs_to :author,
+  class_name: :User,
+  foreign_key: :author_id
 
-  # has_many :bookshelves,
-  # through: :shelvings,
-  # source: :bookshelf
+  belongs_to :book,
+  class_name: :Book,
+  foreign_key: :book_id
 end

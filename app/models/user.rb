@@ -11,6 +11,11 @@ class User < ApplicationRecord
 
 	has_many :books, -> { distinct }, through: :bookshelves
 
+	has_many :reviews,
+	class_name: :Review,
+	foreign_key: :author_id,
+	dependent: :destroy
+
 	attr_reader :password
 
 	after_initialize :ensure_session_token

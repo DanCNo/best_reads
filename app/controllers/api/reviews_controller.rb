@@ -36,6 +36,7 @@ class Api::ReviewsController < ApplicationController
     else
       render json: ["Update failed"], status: 401
     end
+  end
 
   def destroy
     

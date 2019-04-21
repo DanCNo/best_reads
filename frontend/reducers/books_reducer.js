@@ -1,5 +1,6 @@
 import { RECEIVE_BOOKS, RECEIVE_BOOK} from '../actions/book_actions';
 import { RECEIVE_SHELVING, REMOVE_SHELVING, REMOVE_BOOKSHELF } from '../actions/bookshelf_actions';
+import {RECEIVE_REVIEW, REMOVE_REVIEW} from '../actions/review_actions';
 import merge from 'lodash/merge';
 
 const booksReducer = (state = {}, action) => {
@@ -37,6 +38,18 @@ const booksReducer = (state = {}, action) => {
       removeFromBookshelf.bookshelf_ids = removeFromBookshelf.bookshelf_ids.filter(id => id !== action.shelving.bookshelf_id);
       removeFromBookshelf.shelving_ids = removeFromBookshelf.shelving_ids.filter(id => id !== action.shelving.id);
       return newState; 
+
+    case RECEIVE_REVIEW:
+      newState = merge({}, state);
+      const reviewedBook = newState[action.review.book_id];
+      reviewedBook.review_ids.push(action.review.id);
+      return newState;
+
+    case REMOVE_REVIEW:
+      newState = merge({}, state);
+      const unreviewedBook = newState[action.review.book_id];
+      unreviewedBook.review_ids = removeFromBook.review_ids.filter(id => id !== action.review.id);
+      return newState;
 
     default:
       return state;

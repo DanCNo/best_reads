@@ -12,11 +12,9 @@ const reviewsReducer = (state = {}, action) => {
   switch(action.type){
 
     case RECEIVE_REVIEWS:
-
       return action.reviews;
 
     case RECEIVE_REVIEW:
-
       return merge( {}, state, {[action.review.id]: action.review});
 
     case REMOVE_REVIEW:

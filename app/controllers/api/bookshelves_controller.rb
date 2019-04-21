@@ -52,12 +52,14 @@ class Api::BookshelvesController < ApplicationController
   def destroy
     @bookshelf = Bookshelf.find(params[:id])
     id = params[:id];
+    
     if @bookshelf
       if @bookshelf.default
         render json: ["Not allowed to destroy default bookshelves"], status: 401
       else
+        
         @bookshelf.destroy
-        render json: id
+        render "api/bookshelves/show"
       end
     else
       render json: ["Bookshelf not found"], status: 404

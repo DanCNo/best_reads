@@ -4,10 +4,8 @@ import BookIndexItem from './books_index_item';
 class BookIndex extends React.Component {
 
   componentDidMount() {
-    
-    if(!this.props.bookshelf_books){
-      this.props.fetchBooks();
-    }
+
+    this.props.fetchBooks();
     
   }
 

@@ -21,10 +21,10 @@ const receiveBookshelves = (bookshelves) => {
   });
 };
 
-const removeBookshelf = (id) => {
+const removeBookshelf = (bookshelf) => {
   return({
     type: REMOVE_BOOKSHELF,
-    bookshelfId: id
+    bookshelf: bookshelf
   });
 };
 
@@ -72,7 +72,7 @@ export const updateBookshelf = (bookshelf) => dispatch => (
 );
 
 export const deleteBookshelf = (id) => dispatch => (
-  ApiUtil.deleteBookshelf(id).then(id => dispatch(removeBookshelf(id)))
+  ApiUtil.deleteBookshelf(id).then(bookshelf => dispatch(removeBookshelf(bookshelf)))
 );
 
 export const createShelving = (shelving) => dispatch => (

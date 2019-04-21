@@ -1,5 +1,5 @@
 import { RECEIVE_BOOKS, RECEIVE_BOOK} from '../actions/book_actions';
-import { RECEIVE_SHELVING, REMOVE_SHELVING } from '../actions/bookshelf_actions';
+import { RECEIVE_SHELVING, REMOVE_SHELVING, REMOVE_BOOKSHELF } from '../actions/bookshelf_actions';
 import merge from 'lodash/merge';
 
 const booksReducer = (state = {}, action) => {
@@ -12,6 +12,17 @@ const booksReducer = (state = {}, action) => {
 
     case RECEIVE_BOOK:
       return merge({}, state, {[action.book.id]: action.book});
+
+    case REMOVE_BOOKSHELF:
+      newState = merge({}, state);
+      const deletedBookshelf = action.bookshelf;   
+
+      const books = Object.values(newState);
+
+      books.forEach((book) => {
+        book.bookshelf_ids = book.bookshelf_ids.filter(id => id !== deletedBookshelf.id);
+      });
+      return newState;
 
     case RECEIVE_SHELVING:
       newState = merge({}, state);

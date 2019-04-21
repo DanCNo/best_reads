@@ -22,7 +22,7 @@ const bookshelvesReducer = (state = {}, action) => {
 
     case REMOVE_BOOKSHELF:
       newState = merge({}, state);
-      delete newState[action.bookshelfId];
+      delete newState[action.bookshelf.id];
       return newState;
 
     case RECEIVE_SHELVING:

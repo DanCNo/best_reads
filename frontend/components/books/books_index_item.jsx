@@ -9,10 +9,14 @@ const BookIndexItem = ({ book, bookshelves }) => {
     return null;
   }
   const displayBookshelves = bookshelves;
+  const displayBookshelf_ids = book.bookshelf_ids;
   let shelfList;
-  if(displayBookshelves && Object.values(displayBookshelves).length > 0){
-    shelfList = book.bookshelf_ids.map((id) => {
-      return displayBookshelves[id].title;
+  if(displayBookshelf_ids && Object.values(displayBookshelf_ids).length > 0 && 
+    displayBookshelves && Object.values(displayBookshelves).length > 0){
+    shelfList = displayBookshelf_ids.map((id) => {
+      if(displayBookshelves[id]){
+        return displayBookshelves[id].title;
+      }
     }).join(", ");
   } else {
     shelfList = [];

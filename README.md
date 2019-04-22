@@ -1,24 +1,40 @@
-# README
+## Best Reads
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### About
 
-Things you may want to cover:
+Best Reads is a web application clone of Good Reads, where users can maintain a virtual bookshelf and review books. 
 
-* Ruby version
+### Basic Features 
 
-* System dependencies
+  * User-Auth
+    * Users can sign up and log in and log out. 
+    * Users are restricted from creating bookshelves or reviewing books unless they are logged in.
 
-* Configuration
+  * Books
+    * Books have a show page with a cover picture and details
 
-* Database creation
+  * Bookshelves
+    * Bookshelves allow users to organize their books. 
+    * Custom Bookshelves can be created or deleted at any time.
+    * Bookshelves have a show page containing all the books on each individual bookshelf.
+    * Users can switch quickly between each bookshelf with fast loading times. 
 
-* Database initialization
+  * Reviews
+    * Users can create a review on a specific book.
+    * Users can update a review on a specific book.
+    * Users can delete a review on a specific book.
+    * Users have write access only for their reviews.
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
+### Technologies Used
 
-* Deployment instructions
+  * Backend
+    * Database: PostgresSQL
+    * Model, Controllers, Routing: Ruby on Rails
 
-* ...
+  * Frontend
+    * React
+    * Redux
+    * HTML5 / CSS3
+
+## Highlights

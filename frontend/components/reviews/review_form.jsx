@@ -34,7 +34,7 @@ class ReviewForm extends React.Component {
 
     const review = Object.assign({}, this.state);
 
-    if(formType === 'create'){
+    if(this.formType === 'create'){
       this.props.createReview(review);
     } else {
       this.props.updateReview(review);
@@ -43,6 +43,10 @@ class ReviewForm extends React.Component {
 
 
   render() {
+
+    if(this.formType === null){
+      return null;
+    }
 
     return (
       <div className={`${this.formType}-review-container`}>

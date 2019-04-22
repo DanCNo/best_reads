@@ -6,6 +6,7 @@ class BookIndex extends React.Component {
   componentDidMount() {
 
     this.props.fetchBooks();
+    this.props.fetchReviews();
     
   }
 

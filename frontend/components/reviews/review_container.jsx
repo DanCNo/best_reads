@@ -8,11 +8,23 @@ import {
 import ReviewForm from './review_form';
 
 const mapStateToProps = (state, ownProps) => {
-  
+    const currentUser = state.entities.users[state.session.id];
+    const reviews = state.entities.reviews;
+    const book = ownProps.book;
+    let review;
+    let reviewId;
+    if(currentUser.reviewed_book_ids.includes(book.id)){
+      reviewId = currentUser.review_ids.filter((id) => {
+        return book.review_ids.includes(id);
+      });
+      reviewId = reviewId[0];
+      review = reviews[reviewId];
+    }
+    
   return({
-    // review: state.entities.reviews[ownProps.match.params.reviewId],
-    book: ownProps.book,
-    currentUser: state.entities.users[state.session.id],
+    review: review,
+    book: book,
+    currentUser: currentUser,
 
   });
 };

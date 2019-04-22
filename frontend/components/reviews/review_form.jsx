@@ -60,15 +60,6 @@ class ReviewForm extends React.Component {
                 placeholder='Write your review'
               />
             </div>
-            {/* <div className="password-text">
-              <input type="password"
-                value={this.state.password}
-                onChange={this.update('password')}
-                required="required"
-                className={`${this.props.formType}-input`}
-                placeholder='Password'
-              />
-            </div> */}
             <input className={`${this.formType}-submit`} type="submit" value={`${this.formType}`} />
           </div>
 

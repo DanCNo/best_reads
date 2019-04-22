@@ -27,7 +27,7 @@ class SessionForm extends React.Component {
       this.setState({
         [field]: e.currentTarget.value
       });
-    }
+    };
   }
 
   handleSubmit(e) {

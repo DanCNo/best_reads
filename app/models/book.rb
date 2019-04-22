@@ -12,4 +12,8 @@ class Book < ApplicationRecord
   has_many :reviews,
   class_name: :Review,
   foreign_key: :book_id
+
+  has_many :reviewers,
+  through: :reviews,
+  source: :author
 end

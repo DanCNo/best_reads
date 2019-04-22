@@ -16,6 +16,10 @@ class User < ApplicationRecord
 	foreign_key: :author_id,
 	dependent: :destroy
 
+	has_many :reviewed_books,
+	through: :reviews,
+	source: :book
+
 	attr_reader :password
 
 	after_initialize :ensure_session_token

@@ -4,6 +4,7 @@ const fetch = require('node-fetch');
 import NavbarContainer from '../navbar/navbar_container';
 import ShelvingItem from '../bookshelves/shelving_item';
 import ReviewContainer from '../reviews/review_container';
+import ReviewIndexContainer from '../reviews/review_index_container';
 
 class BookShowItem extends React.Component {
 
@@ -128,6 +129,9 @@ class BookShowItem extends React.Component {
         <div className="book-show-reviews-container">
           <div className="book-show-review-form-container">
             <ReviewContainer book={this.props.book}/>
+          </div>
+          <div>
+            <ReviewIndexContainer book={this.props.book}/>
           </div>
           <div>
 

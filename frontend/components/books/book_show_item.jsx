@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 const fetch = require('node-fetch');
 import NavbarContainer from '../navbar/navbar_container';
 import ShelvingItem from '../bookshelves/shelving_item';
+import ReviewContainer from '../reviews/review_container';
 
 class BookShowItem extends React.Component {
 
@@ -125,8 +126,8 @@ class BookShowItem extends React.Component {
         <div className="book-show-main-divider-line">
 </div>
         <div className="book-show-reviews-container">
-          <div>
-            placeholder for reviews section
+          <div className="book-show-review-form-container">
+            <ReviewContainer book={this.props.book}/>
           </div>
           <div>
 

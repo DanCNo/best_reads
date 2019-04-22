@@ -20,6 +20,7 @@ class BookShowItem extends React.Component {
   componentDidMount() {
     this.props.fetchBookshelves();
     this.props.fetchBook(this.props.match.params.bookId);
+    this.props.fetchReviews();
     
     
   }
@@ -126,11 +127,11 @@ class BookShowItem extends React.Component {
         </div>
         <div className="book-show-main-divider-line">
 </div>
-        <div className="book-show-reviews-container">
+        <div className="book-show-reviews-box">
           <div className="book-show-review-form-container">
             <ReviewContainer book={this.props.book}/>
           </div>
-          <div>
+          <div className="book-show-reviews-container">
             <ReviewIndexContainer book={this.props.book}/>
           </div>
           <div>

@@ -8,7 +8,11 @@ const mapStateToProps = (state, ownProps) => {
   const currentUser = state.entities.users[state.session.id];
   
   const reviews = book.review_ids.map((id) => {
-    return allReviews[id];
+    
+    if(allReviews[id].author_id !== currentUser.id){
+      
+      return allReviews[id];
+    }
   });
 
   return ({

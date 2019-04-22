@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import { fetchBook } from '../../actions/book_actions';
 import { fetchBookshelves, createShelving, deleteShelving } from '../../actions/bookshelf_actions';
+import { fetchReviews } from '../../actions/review_actions';
 import BookShowItem from './book_show_item';
 
 const mapStateToProps = (state, ownProps) => {
@@ -15,7 +16,8 @@ const mapDispatchToProps = (dispatch) => {
     fetchBook: (id) => dispatch(fetchBook(id)),
     fetchBookshelves: () => dispatch(fetchBookshelves()),
     createShelving: (shelving) => dispatch(createShelving(shelving)),
-    deleteShelving: (id) => dispatch(deleteShelving(id))
+    deleteShelving: (id) => dispatch(deleteShelving(id)),
+    fetchReviews: () => dispatch(fetchReviews())
   });
 };
 

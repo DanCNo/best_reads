@@ -163,7 +163,7 @@ ActiveRecord::Base.transaction do
       'pages' => 336,
       'year_published' => 2004,
       'isbn_13' => 9780812973013,
-      'cover_url' => 'https://covers.openlibrary.org/b/id/8290911-M.jpg'
+      'cover_url' => 'https://covers.openlibrary.org/b/id/606360-M.jpg'
     },
     {
       'title' => 'Snow Crash',

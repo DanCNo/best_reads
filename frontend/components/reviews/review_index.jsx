@@ -25,7 +25,7 @@ class ReviewIndex extends React.Component {
 
     return (
       <>      
-        <div>
+        <div className="review-index-container">
           {displayReviews}
         </div>
       </>

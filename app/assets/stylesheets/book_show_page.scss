@@ -2,9 +2,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: #FFFFFF;
+  background: #ffffff;
   background-size: cover;
-  height: 100vh;
+  // height: 100vh;
   width: 100vw;
 }
 
@@ -117,4 +117,33 @@
   cursor: pointer;
   background-color:  rgb(219, 216, 211);
   padding-left: 5px;
+}
+
+.review-index-container{
+  width: 800px;
+}
+
+.user-review-display-container{
+  width: 800px;
+  padding-top: 5px;
+  // border-top: 1px solid red;
+  
+  
+}
+
+.write-review-input{
+  width: 600px;
+  height: 200px;
+}
+
+.update-review-input{
+  width: 600px;
+  height: 200px;
+}
+
+.review-index-item-container{
+  border-top: 1px solid black;
+  padding-top: 5px;
+ 
+  
 }

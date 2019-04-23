@@ -8,10 +8,10 @@ const ReviewIndexItem = ({ book, review }) => {
 
   return (
     <div>
-        <div>Rating
+        {/* <div>Rating
           <span>{review.rating}</span>
-        </div>
-        <div>Review Body
+        </div> */}
+        <div className="review-index-item-container">
           <span>{review.body}</span>
         </div>
     </div>

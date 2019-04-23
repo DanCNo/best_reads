@@ -4,18 +4,25 @@ import BookIndexCover from './book-index-cover';
 
 
 
-const BookIndexItem = ({ book, bookshelves }) => {
+const BookIndexItem = ({ book, bookshelves, currentUser }) => {
   if(!book){
     return null;
   }
   const displayBookshelves = bookshelves;
-  const displayBookshelf_ids = book.bookshelf_ids;
+  let userBookshelves;
+  let displayBookshelf_ids;
+  if(currentUser){
+    userBookshelves = currentUser.bookshelf_ids;
+    displayBookshelf_ids = book.bookshelf_ids.filter((id) => userBookshelves.includes(id));
+  } else {
+    displayBookshelf_ids = book.bookshelf_ids;
+  }
   let shelfList;
   if(displayBookshelf_ids && Object.values(displayBookshelf_ids).length > 0 && 
     displayBookshelves && Object.values(displayBookshelves).length > 0){
     shelfList = displayBookshelf_ids.map((id) => {
-      if(displayBookshelves[id]){
-        return displayBookshelves[id].title;
+      if(displayBookshelves[id]){      
+        return displayBookshelves[id].title;        
       }
     }).join(", ");
   } else {

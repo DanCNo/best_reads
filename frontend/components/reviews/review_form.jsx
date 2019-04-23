@@ -58,6 +58,16 @@ class ReviewForm extends React.Component {
       return null;
     }
 
+    const userReviewDisplay = (this.props.review && this.props.review.body.length > 0) ? (
+      <div>
+        <div>
+          {this.props.review.body}
+        </div>
+      </div>
+    ) : (
+      <div></div>
+    )
+
     const reviewAction = (this.formType === 'update') ? (
       <>
         <div className="review-action-button-container">
@@ -72,6 +82,7 @@ class ReviewForm extends React.Component {
 
     const renderReviewForm = (this.state.reviewChange === true) ? (
       <>
+        
         <div>
           <form onSubmit={this.handleSubmit} className={`${this.formType}-review-box`}>
             <div className={`${this.formType}-form`}>
@@ -101,7 +112,9 @@ class ReviewForm extends React.Component {
 
     return (
       <div className={`${this.formType}-review-container`}>
-
+        <div className="user-review-display-container">
+          {userReviewDisplay}
+        </div>
         <div>
           {reviewAction}
         </div>

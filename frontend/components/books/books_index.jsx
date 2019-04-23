@@ -13,23 +13,24 @@ class BookIndex extends React.Component {
   render() {
     let displayBooks;
     const bookshelves = this.props.bookshelves;
+    const currentUser = this.props.currentUser;
     if(this.props.bookshelf_books){
 
       displayBooks = Object.values(this.props.bookshelf_books).map((book, idx) => {
         
-        return <BookIndexItem key={idx} book={book} bookshelves={bookshelves}/>
+        return <BookIndexItem key={idx} book={book} bookshelves={bookshelves} currentUser={currentUser}/>
       });
 
     } else if(this.props.books.length > 0 && this.props.history && this.props.history.location.pathname ==='/bookshelves'){
         
         displayBooks = this.props.books.filter(book => this.props.currentUser.book_ids.includes(book.id)).map((book, idx) => {
           
-          return <BookIndexItem key={idx} book={book} bookshelves={bookshelves}/>
+          return <BookIndexItem key={idx} book={book} bookshelves={bookshelves} currentUser={currentUser}/>
         });
     } else {
       displayBooks = this.props.books.map((book, idx) => {
         
-        return <BookIndexItem key={idx} book={book} bookshelves={bookshelves}/>
+        return <BookIndexItem key={idx} book={book} bookshelves={bookshelves} currentUser={currentUser}/>
       });
 
     }

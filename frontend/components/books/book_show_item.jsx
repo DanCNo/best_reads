@@ -125,8 +125,8 @@ class BookShowItem extends React.Component {
           </div>
           
         </div>
-        <div className="book-show-main-divider-line">
-</div>
+        <div className="book-show-main-divider-line"></div>
+        
         <div className="book-show-reviews-box">
           <div className="book-show-review-form-container">
             <ReviewContainer book={this.props.book}/>

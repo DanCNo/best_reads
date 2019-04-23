@@ -15,8 +15,17 @@ const mapStateToProps = (state, ownProps) => {
     }
   });
 
+  const userReview = book.review_ids.map((id) => {
+
+    if (allReviews[id].author_id === currentUser.id) {
+
+      return allReviews[id];
+    }
+  });
+
   return ({
     reviews: reviews,
+    userReview: userReview,
     book: book,
     currentUser: currentUser,
 

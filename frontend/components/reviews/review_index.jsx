@@ -14,6 +14,9 @@ class ReviewIndex extends React.Component {
     const reviews = this.props.reviews;
     const book = this.props.book;
     const currentUser = this.props.currentUser;
+    const userReview = this.props.userReview;
+
+    
 
     const displayReviews = reviews.map((review, idx) => {
 

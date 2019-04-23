@@ -5,9 +5,16 @@ import { fetchReviews } from '../../actions/review_actions';
 import BookShowItem from './book_show_item';
 
 const mapStateToProps = (state, ownProps) => {
+
+  const book = state.entities.books[ownProps.match.params.bookId];
+  const currentUser = state.entities.users[state.session.id];
+  let rated = false;
+
   return ({
-    book: state.entities.books[ownProps.match.params.bookId],
-    bookshelves: Object.values(state.entities.bookshelves)
+    book: book,
+    bookshelves: Object.values(state.entities.bookshelves),
+    rated: rated,
+    
   });
 };
 

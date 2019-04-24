@@ -9,6 +9,17 @@
   text-decoration-line: underline;
 }
 
+.bookshelf-display-item {
+  font-size: 12px;
+  color: #036a63;
+  text-decoration-color: #036a63;
+  text-decoration-line: none;
+}
+
+.bookshelf-display-item:hover{
+  text-decoration-line: underline;
+}
+
 .mybooks_text_container {
   padding: 12px 5px 5px 0px;
 }

@@ -11,6 +11,7 @@ class BookShowItem extends React.Component {
   constructor(props){
     super(props);
 
+    debugger
     this.createShelving = this.props.createShelving.bind(this);
     this.deleteShelving = this.props.deleteShelving.bind(this);
     this.handleDeleteShelving = this.handleDeleteShelving.bind(this);

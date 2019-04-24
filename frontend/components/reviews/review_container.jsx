@@ -33,7 +33,7 @@ const mapDispatchToProps = dispatch => {
   return{
     createReview: (review) => dispatch(createReview(review)),
     updateReview: (review) => dispatch(updateReview(review)),
-
+    deleteReview: (review) => dispatch(deleteReview(review))
   };
 };
 

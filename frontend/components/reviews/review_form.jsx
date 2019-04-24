@@ -21,6 +21,8 @@ class ReviewForm extends React.Component {
     
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleReviewAction = this.handleReviewAction.bind(this);
+    this.handleDelete = this.handleDelete.bind(this);
+    
   }
 
   update(field) {
@@ -51,9 +53,15 @@ class ReviewForm extends React.Component {
     
   }
 
+  handleDelete(review){
+    this.setState({ reviewChange: true });
+    this.props.deleteReview(review)
+    .then(this.setState({ reviewChange: false }));
+  }
+
 
   render() {
-
+    debugger
     if(this.formType === null){
       return null;
     }
@@ -70,9 +78,12 @@ class ReviewForm extends React.Component {
 
     const reviewAction = (this.formType === 'update') ? (
       <>
-        <div className="review-action-button-container">
+        <span className="review-action-button-container">
           <button className="review-action-button" value="Update Review" onClick={this.handleReviewAction}>Update Review</button>
-        </div>
+        </span>
+        <span>
+          <button className="review-delete-button" value="Delete Review" onClick={() => this.handleDelete(this.props.review.id)}>Delete Review</button>
+        </span>
       </>
     ) : (
       <div className="review-action-button-container">

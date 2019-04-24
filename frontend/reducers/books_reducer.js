@@ -43,12 +43,14 @@ const booksReducer = (state = {}, action) => {
       newState = merge({}, state);
       const reviewedBook = newState[action.review.book_id];
       reviewedBook.review_ids.push(action.review.id);
+      reviewedBook.reviewer_ids.push(action.review.author_id);
       return newState;
 
     case REMOVE_REVIEW:
       newState = merge({}, state);
       const unreviewedBook = newState[action.review.book_id];
-      unreviewedBook.review_ids = removeFromBook.review_ids.filter(id => id !== action.review.id);
+      unreviewedBook.review_ids = unreviewedBook.review_ids.filter(id => id !== action.review.id);
+      unreviewedBook.reviewer_ids = unreviewedBook.reviewer_ids.filter(id => id !== action.review.author_id);
       return newState;
 
     default:

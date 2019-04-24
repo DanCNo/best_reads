@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import BookIndexCover from './book-index-cover';
-
+import BookshelvesDisplayItem from '../bookshelves/bookshelves_display_item';
 
 
 const BookIndexItem = ({ book, bookshelves, currentUser }) => {
@@ -22,9 +22,12 @@ const BookIndexItem = ({ book, bookshelves, currentUser }) => {
     displayBookshelves && Object.values(displayBookshelves).length > 0){
     shelfList = displayBookshelf_ids.map((id) => {
       if(displayBookshelves[id]){      
-        return displayBookshelves[id].title;        
+        // return displayBookshelves[id].title;
+        // return <Link to={`/bookshelves/${id}`} className="shelf-link"><span>{displayBookshelves[id].title}</span></Link>
+        return <BookshelvesDisplayItem key={`bookshelf-${id}`} bookshelf={displayBookshelves[id]}/>
       }
-    }).join(", ");
+    });
+    shelfList = [].concat(...shelfList.map(component => [', ', component])).slice(1);
   } else {
     shelfList = [];
   }

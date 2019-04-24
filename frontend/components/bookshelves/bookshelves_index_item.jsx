@@ -6,11 +6,11 @@ const BookshelvesIndexItem = ({ bookshelf }) => {
   
   
   return (
-    <div className="bookshelf-index-item-container">
+    <span className="bookshelf-index-item-container">
       <Link to={`/bookshelves/${bookshelf.id}`} className="bookshelf-index-item">
         {`${bookshelf.title} (${bookCount})`}
       </Link>
-    </div>
+    </span>
   );
 };
 

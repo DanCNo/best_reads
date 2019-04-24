@@ -8,6 +8,7 @@ class BookshelvesIndex extends React.Component {
   
     this.state = this.props.bookshelf;
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleDelete = this.handleDelete.bind(this);
 
     this.deleteBookshelf = this.props.deleteBookshelf.bind(this);
   }
@@ -36,6 +37,12 @@ class BookshelvesIndex extends React.Component {
     this.setState({
       title: "", default: false, user_id: ""
     });
+  }
+
+  handleDelete(id) {
+    this.props.deleteBookshelf(id);
+
+
   }
 
   render() {

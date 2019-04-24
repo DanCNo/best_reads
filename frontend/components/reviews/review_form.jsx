@@ -111,7 +111,7 @@ class ReviewForm extends React.Component {
                 className={`${this.formType}-review-input`}
                 placeholder='Write your review'>
               </textarea>
-              <input className={`${this.formType}-submit`} type="submit" value={`${this.formType}`} />
+              <input className={`${this.formType}-submit`} type="submit" value={`submit`} />
             </div>
 
           </form>

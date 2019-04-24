@@ -31,7 +31,7 @@ const BookIndexItem = ({ book, bookshelves, currentUser }) => {
   } else {
     shelfList = [];
   }
-
+  
   return(
     <tr className="book-index-col-valsrow-container">
       <td className="book-index-col-cover-container">

@@ -3,9 +3,11 @@ import { RECEIVE_SHELVING, REMOVE_SHELVING, REMOVE_BOOKSHELF } from '../actions/
 import {RECEIVE_REVIEW, REMOVE_REVIEW} from '../actions/review_actions';
 import merge from 'lodash/merge';
 
+
 const booksReducer = (state = {}, action) => {
   Object.freeze(state);
   let newState;
+  
 
   switch(action.type){
     case RECEIVE_BOOKS:
@@ -16,12 +18,21 @@ const booksReducer = (state = {}, action) => {
 
     case REMOVE_BOOKSHELF:
       newState = merge({}, state);
-      const deletedBookshelf = action.bookshelf;   
+      const deletedBookshelf = action.bookshelf;
 
       const books = Object.values(newState);
 
-      books.forEach((book) => {
+      const bookshelfBooks = books.filter((book)=> book.bookshelf_ids.includes(deletedBookshelf.id));
+
+      bookshelfBooks.forEach((book) => {
         book.bookshelf_ids = book.bookshelf_ids.filter(id => id !== deletedBookshelf.id);
+        let count = book.reader_ids.filter((id) => id === deletedBookshelf.user_id).length;
+        book.reader_ids = book.reader_ids.filter((id) => id !== deletedBookshelf.user_id);
+        count -= 1;
+        while(count > 0){
+          book.reader_ids.push(deletedBookshelf.user_id);
+          count --;
+        }
       });
       return newState;
 

@@ -8,7 +8,8 @@ const mapStateToProps = (state, ownProps) => {
   return ({
     errors: state.errors.bookshelf,
     bookshelf: state.entities.bookshelves[ownProps.match.params.bookshelfId],
-    books: state.entities.books
+    books: state.entities.books,
+    
 
   });
 };

@@ -23,7 +23,8 @@ class BookIndex extends React.Component {
 
     } else if(this.props.books.length > 0 && this.props.history && this.props.history.location.pathname ==='/bookshelves'){
         
-        displayBooks = this.props.books.filter(book => this.props.currentUser.book_ids.includes(book.id)).map((book, idx) => {
+        displayBooks = this.props.books.filter(book => book.reader_ids.includes(currentUser.id))
+        .map((book, idx) => {
           
           return <BookIndexItem key={idx} book={book} bookshelves={bookshelves} currentUser={currentUser}/>
         });

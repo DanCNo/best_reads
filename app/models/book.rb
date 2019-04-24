@@ -9,6 +9,10 @@ class Book < ApplicationRecord
   through: :shelvings,
   source: :bookshelf
 
+  has_many :readers,
+  through: :bookshelves,
+  source: :user
+
   has_many :reviews,
   class_name: :Review,
   foreign_key: :book_id

@@ -1,6 +1,7 @@
 import merge from 'lodash/merge';
 import { RECEIVE_CURRENT_USER } from '../actions/session_actions';
 import { RECEIVE_REVIEW, REMOVE_REVIEW } from '../actions/review_actions';
+import { RECEIVE_SHELVING, REMOVE_SHELVING, RECEIVE_BOOKSHELF, REMOVE_BOOKSHELF } from '../actions/bookshelf_actions';
 
 const usersReducer = (state = {}, action) => {
   Object.freeze(state);
@@ -9,6 +10,31 @@ const usersReducer = (state = {}, action) => {
   switch (action.type) {
     case RECEIVE_CURRENT_USER:
       return merge({}, state, { [action.currentUser.id]: action.currentUser });
+
+    case RECEIVE_BOOKSHELF:
+      newState = ({}, state);
+      const addBookshelf = newState[action.bookshelf.user_id];
+      addBookshelf.bookshelf_ids.push(action.bookshelf.id);
+      return newState;
+
+    case REMOVE_BOOKSHELF:
+      newState = ({}, state);
+      const removeBookshelf = newState[action.bookshelf.user_id];
+      removeBookshelf.bookshelf_ids = removeBookshelf.bookshelf_ids.filter(id => id !== action.bookshelf.id);
+      return newState;
+
+    // case RECEIVE_SHELVING:
+    //   newState = ({}, state);
+    //   const addShelvingBook = newState[action.shelving.creator.id];
+    //   addShelvingBook.book_ids.push(action.shelving.book_id);
+    //   return newState;
+
+    // case REMOVE_SHELVING:
+    //   newState = ({}, state);
+    //   const removeShelvingBook = newState[action.shelving.creator.id];
+
+    //   removeShelvingBook.book_ids = removeShelvingBook.book_ids.filter(id => id !== action.shelving.book_id);
+    //   return newState;
 
     case RECEIVE_REVIEW:
       newState = ({}, state);

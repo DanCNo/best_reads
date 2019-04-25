@@ -44,6 +44,7 @@ class ReviewForm extends React.Component {
       review.reviewChange = false;
 
       this.props.createReview(review).then(()=>{
+        
         this.formType = "update";
         this.setState(review);
       });
@@ -62,8 +63,9 @@ class ReviewForm extends React.Component {
   }
 
   handleDelete(review){
-    // this.setState({ reviewChange: true });
-    this.props.deleteReview(review).then(()=> {
+    
+    this.props.deleteReview(review.id).then(()=> {
+      this.formType = "write";
       this.setState({
         body: '',
         author_id: this.props.currentUser.id,
@@ -71,10 +73,7 @@ class ReviewForm extends React.Component {
         rating: 5,
         reviewChange: false
       });
-      this.formType = "write";
     });
-    // .then(this.forceUpdate())
-    // .then(this.setState({ reviewChange: false }));
   }
 
 
@@ -90,7 +89,7 @@ class ReviewForm extends React.Component {
           <button className="review-action-button" value="Update Review" onClick={this.handleReviewAction}>Update Review</button>
         </span>
         <span>
-          <button className="review-delete-button" value="Delete Review" onClick={() => this.handleDelete(this.props.review.id)}>Delete Review</button>
+          <button className="review-delete-button" value="Delete Review" onClick={() => this.handleDelete(this.props.review)}>Delete Review</button>
         </span>
       </>
     ) : (

@@ -149,13 +149,7 @@
   height: 200px;
 }
 
-.review-index-item-container{
-  border-top: 1px solid black;
-  padding-top: 5px;
-  margin-top: 5px;
- 
-  
-}
+
 
 .review-delete-button{
   background-color: #ebe9e6;
@@ -179,4 +173,16 @@
 .review-action-button:hover{
   cursor: pointer;
   background-color: rgb(219, 216, 211);
+}
+.review-index-item-container{
+  border-top: 1px solid black;
+  padding-top: 5px;
+  margin-top: 5px;
+  font-size: 14px;
+  font-family: "Merriweather", "Georgia", serif;
+  
+}
+.reviewer-username-container{
+  font-weight: 700;
+  font-family: "Merriweather", "Georgia", serif;
 }

@@ -28,15 +28,14 @@ const mapStateToProps = (state, ownProps) => {
 
   // }
 
-  const bookReviewers = Object.values(state.entities.users).filter((reviewer) => {
-    return book.reviewer_ids.includes(reviewer.id);
-  });
+  // const bookReviewers = Object.values(state.entities.users).filter((reviewer) => {
+  //   return book.reviewer_ids.includes(reviewer.id);
+  // });
 
   return ({
     reviews: allReviews,
     book: book,
     currentUser: currentUser,
-    bookReviewers: bookReviewers,
     users: state.entities.users
 
   });

@@ -41,9 +41,17 @@ class ReviewForm extends React.Component {
     const review = Object.assign({}, this.state);
 
     if(this.formType === 'write'){
-      this.props.createReview(review).then(this.setState({reviewChange: false}));
+      review.reviewChange = false;
+
+      this.props.createReview(review).then(()=>{
+        this.formType = "update";
+        this.setState(review);
+      });
     } else {
-      this.props.updateReview(review).then(this.setState({ reviewChange: false }));
+      review.reviewChange = false;
+      this.props.updateReview(review).then(() =>{
+        this.setState(review);
+      });
     }
   }
 
@@ -54,9 +62,19 @@ class ReviewForm extends React.Component {
   }
 
   handleDelete(review){
-    this.setState({ reviewChange: true });
-    this.props.deleteReview(review).then(this.forceUpdate())
-    .then(this.setState({ reviewChange: false }));
+    // this.setState({ reviewChange: true });
+    this.props.deleteReview(review).then(()=> {
+      this.setState({
+        body: '',
+        author_id: this.props.currentUser.id,
+        book_id: this.props.book.id,
+        rating: 5,
+        reviewChange: false
+      });
+      this.formType = "write";
+    });
+    // .then(this.forceUpdate())
+    // .then(this.setState({ reviewChange: false }));
   }
 
 

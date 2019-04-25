@@ -12,11 +12,11 @@ const ReviewIndexItem = ({ book, review, bookReviewers }) => {
 
 
   return (
-    <div>
-        <div>Rating
-          <span>{reviewer.name}</span>
+    <div className="review-index-item-container">
+        <div className="reviewer-username-container">
+          <span>{`${reviewer.username}\'s Review`}</span>
         </div>
-        <div className="review-index-item-container">
+        <div >
           <span>{review.body}</span>
         </div>
     </div>

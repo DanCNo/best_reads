@@ -14,6 +14,7 @@ const mapStateToProps = (state, ownProps) => {
     const book = ownProps.book;
     let review;
     let reviewId;
+    
     if(currentUser.reviewed_book_ids.includes(book.id)){
       reviewId = currentUser.review_ids.filter((id) => {
         return book.review_ids.includes(id);
@@ -21,7 +22,7 @@ const mapStateToProps = (state, ownProps) => {
       reviewId = reviewId[0];
       review = reviews[reviewId];
     }
-    
+  debugger
   return({
     review: review,
     book: book,

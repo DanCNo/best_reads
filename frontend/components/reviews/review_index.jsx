@@ -13,7 +13,12 @@ class ReviewIndex extends React.Component {
   render() {
     const book = this.props.book;
     const currentUser = this.props.currentUser;
-    // const bookReviews = this.props.reviews;
+    const users = this.props.users;
+
+
+    const bookReviewers = Object.values(users).filter((reviewer) => {
+      return book.reviewer_ids.includes(reviewer.id);
+    });
 
     const bookReviews = this.props.reviews.filter((review) => {
       if(book && book.review_ids.length > 0){
@@ -31,15 +36,19 @@ class ReviewIndex extends React.Component {
     if(userReview[0]){
       userReviewDisplay = userReview.map((review) => {
 
-      return <ReviewIndexItem key={review.id + 1000} book={book} review={review} currentUser={currentUser} />})
+        return <ReviewIndexItem key={review.id + 1000} book={book} review={review} currentUser={currentUser} bookReviewers={bookReviewers}/>})
     }
     
     let displayReviews;
     if(bookReviews){
       displayReviews = bookReviews.map((review, idx) => {
   
-        return <ReviewIndexItem key={idx} book={book} review={review} currentUser={currentUser} />
+        return <ReviewIndexItem key={idx} book={book} review={review} currentUser={currentUser} bookReviewers={bookReviewers}/>
       });
+    }
+
+    if(Object.values(users).length < 2){
+      return null;
     }
 
     return (

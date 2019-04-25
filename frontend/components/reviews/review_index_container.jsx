@@ -1,31 +1,35 @@
 import { connect } from 'react-redux';
 import { fetchReviews } from '../../actions/review_actions';
 import ReviewIndex from './review_index';
+import { fetchUsers } from '../../actions/session_actions';
 
 const mapStateToProps = (state, ownProps) => {
-  const allReviews = state.entities.reviews;
+  const allReviews = Object.values(state.entities.reviews);
   const book = ownProps.book;
   const currentUser = state.entities.users[state.session.id];
   
-  const reviews = book.review_ids.map((id) => {
-    
-    if(allReviews[id].author_id !== currentUser.id){
-      
-      return allReviews[id];
-    }
-  });
+  // let reviews;
+  // let userReview;
 
-  const userReview = book.review_ids.map((id) => {
+  // if(book.review_ids.length > 0){
+  //   reviews = book.review_ids.map((id) => {
+  //     if(allReviews[id].author_id !== currentUser.id){
+        
+  //       return allReviews[id];
+  //     }
+  //   });
+  
+  //   userReview = book.review_ids.map((id) => {
+  //     if (allReviews[id].author_id === currentUser.id) {
+  
+  //       return allReviews[id];
+  //     }
+  //   });
 
-    if (allReviews[id].author_id === currentUser.id) {
-
-      return allReviews[id];
-    }
-  });
+  // }
 
   return ({
-    reviews: reviews,
-    userReview: userReview,
+    reviews: allReviews,
     book: book,
     currentUser: currentUser,
 
@@ -35,6 +39,7 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = dispatch => {
   return {
     fetchReviews: () => dispatch(fetchReviews()),
+    fetchUsers: () => dispatch(fetchUsers()),
 
   };
 };

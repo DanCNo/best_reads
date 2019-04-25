@@ -5,6 +5,7 @@ import {
   deleteReview,
   fetchReview 
 } from '../../actions/review_actions';
+import { fetchUsers } from '../../actions/session_actions';
 import ReviewForm from './review_form';
 
 const mapStateToProps = (state, ownProps) => {
@@ -33,7 +34,8 @@ const mapDispatchToProps = dispatch => {
   return{
     createReview: (review) => dispatch(createReview(review)),
     updateReview: (review) => dispatch(updateReview(review)),
-    deleteReview: (review) => dispatch(deleteReview(review))
+    deleteReview: (review) => dispatch(deleteReview(review)),
+    fetchUsers: () => dispatch(fetchUsers()),
   };
 };
 

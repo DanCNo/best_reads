@@ -13,7 +13,7 @@ class ReviewForm extends React.Component {
         body: '',
         author_id: this.props.currentUser.id,
         book_id: this.props.book.id,
-        rating: 0,
+        rating: 5,
         reviewChange: false
       };
       this.formType = 'write';
@@ -55,7 +55,7 @@ class ReviewForm extends React.Component {
 
   handleDelete(review){
     this.setState({ reviewChange: true });
-    this.props.deleteReview(review)
+    this.props.deleteReview(review).then(this.forceUpdate())
     .then(this.setState({ reviewChange: false }));
   }
 
@@ -65,16 +65,6 @@ class ReviewForm extends React.Component {
     if(this.formType === null){
       return null;
     }
-
-    const userReviewDisplay = (this.props.review && this.props.review.body.length > 0) ? (
-      <div>
-        <div>
-          {this.props.review.body}
-        </div>
-      </div>
-    ) : (
-      <div></div>
-    )
 
     const reviewAction = (this.formType === 'update') ? (
       <>
@@ -87,7 +77,7 @@ class ReviewForm extends React.Component {
       </>
     ) : (
       <div className="review-action-button-container">
-          <button className="review-action-button" value="Write Review" onClick={this.handleReviewAction}>Write Review</button>
+          <button className="review-action-button" value="Create Review" onClick={this.handleReviewAction}>Write Review</button>
       </div>
     )
 
@@ -97,14 +87,6 @@ class ReviewForm extends React.Component {
         <div>
           <form onSubmit={this.handleSubmit} className={`${this.formType}-review-box`}>
             <div className={`${this.formType}-form`}>
-              {/* <div>
-                <input type="body"
-                  value={this.state.body}
-                  onChange={this.update('body')}
-                  className={`${this.formType}-review-input`}
-                  placeholder='Write your review'
-                />
-              </div> */}
               <textarea 
                 value={this.state.body} 
                 onChange={this.update('body')} 
@@ -124,7 +106,6 @@ class ReviewForm extends React.Component {
     return (
       <div className={`${this.formType}-review-container`}>
         <div className="user-review-display-container">
-          {userReviewDisplay}
         </div>
         <div>
           {reviewAction}

@@ -7,13 +7,11 @@ const ReviewIndexItem = ({ book, review }) => {
   }
 
   return (
-    <div>
-        {/* <div>Rating
-          <span>{review.rating}</span>
-        </div> */}
-        <div className="review-index-item-container">
-          <span>{review.body}</span>
-        </div>
+    <div className="review-index-item-container">
+      <div>
+        {review.author_id}
+      </div>
+      <span>{review.body}</span>
     </div>
   );
 };

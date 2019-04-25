@@ -1,5 +1,5 @@
 import merge from 'lodash/merge';
-import { RECEIVE_CURRENT_USER } from '../actions/session_actions';
+import { RECEIVE_CURRENT_USER, RECEIVE_USERS } from '../actions/session_actions';
 import { RECEIVE_REVIEW, REMOVE_REVIEW } from '../actions/review_actions';
 import { RECEIVE_SHELVING, REMOVE_SHELVING, RECEIVE_BOOKSHELF, REMOVE_BOOKSHELF } from '../actions/bookshelf_actions';
 
@@ -10,6 +10,9 @@ const usersReducer = (state = {}, action) => {
   switch (action.type) {
     case RECEIVE_CURRENT_USER:
       return merge({}, state, { [action.currentUser.id]: action.currentUser });
+    
+    case RECEIVE_USERS:
+      return action.users;
 
     case RECEIVE_BOOKSHELF:
       newState = ({}, state);

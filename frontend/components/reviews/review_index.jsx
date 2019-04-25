@@ -6,6 +6,7 @@ class ReviewIndex extends React.Component {
   componentDidMount() {
 
     // this.props.fetchReviews();
+    this.props.fetchUsers();
 
   }
 
@@ -15,13 +16,16 @@ class ReviewIndex extends React.Component {
     const book = this.props.book;
     const currentUser = this.props.currentUser;
     const userReview = this.props.userReview;
-
+    const bookReviewers = this.props.bookReviewers;
+    const users = this.props.users;
     
 
     const displayReviews = reviews.map((review, idx) => {
 
-      return <ReviewIndexItem key={idx} book={book} review={review} currentUser={currentUser} />
+      return <ReviewIndexItem key={idx} book={book} review={review} currentUser={currentUser} bookReviewers={bookReviewers}/>
     });
+
+    if(reviews.length > 0 && this.props.users)
 
     return (
       <>      

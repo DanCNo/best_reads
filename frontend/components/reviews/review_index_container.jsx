@@ -23,11 +23,17 @@ const mapStateToProps = (state, ownProps) => {
     }
   });
 
+  const bookReviewers = Object.values(state.entities.users).filter((reviewer) => {
+    return book.reviewer_ids.includes(reviewer.id);
+  });
+
   return ({
     reviews: reviews,
     userReview: userReview,
     book: book,
     currentUser: currentUser,
+    bookReviewers: bookReviewers,
+    users: state.entities.users
 
   });
 };
@@ -35,6 +41,7 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = dispatch => {
   return {
     fetchReviews: () => dispatch(fetchReviews()),
+    fetchUsers: () => dispatch(fetchUsers())
 
   };
 };

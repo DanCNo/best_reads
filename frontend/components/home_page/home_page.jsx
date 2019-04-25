@@ -5,6 +5,7 @@ import BookIndexContainer from '../books/books_index_container';
 import BookshelvesIndexContainer from '../bookshelves/bookshelves_index_container';
 
 const HomePage = () => {
+  
   return (
     <>
       <header>

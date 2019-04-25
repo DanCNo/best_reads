@@ -5,30 +5,48 @@ class ReviewIndex extends React.Component {
 
   componentDidMount() {
 
-    // this.props.fetchReviews();
+    this.props.fetchReviews();
     this.props.fetchUsers();
 
   }
 
   render() {
-    
-    const reviews = this.props.reviews;
     const book = this.props.book;
     const currentUser = this.props.currentUser;
-    const userReview = this.props.userReview;
-    const bookReviewers = this.props.bookReviewers;
-    const users = this.props.users;
-    
+    // const bookReviews = this.props.reviews;
 
-    const displayReviews = reviews.map((review, idx) => {
-
-      return <ReviewIndexItem key={idx} book={book} review={review} currentUser={currentUser} bookReviewers={bookReviewers}/>
+    const bookReviews = this.props.reviews.filter((review) => {
+      if(book && book.review_ids.length > 0){
+        return (book.review_ids.includes(review.id) && review.author_id !== currentUser.id);
+      }
     });
 
-    if(reviews.length > 0 && this.props.users)
+    const userReview = this.props.reviews.filter((review) => {
+      if(book && book.review_ids.length > 0){
+        return (book.review_ids.includes(review.id) && review.author_id == currentUser.id);
+      }
+    });
+
+    let userReviewDisplay;
+    if(userReview[0]){
+      userReviewDisplay = userReview.map((review) => {
+
+      return <ReviewIndexItem key={review.id + 1000} book={book} review={review} currentUser={currentUser} />})
+    }
+    
+    let displayReviews;
+    if(bookReviews){
+      displayReviews = bookReviews.map((review, idx) => {
+  
+        return <ReviewIndexItem key={idx} book={book} review={review} currentUser={currentUser} />
+      });
+    }
 
     return (
-      <>      
+      <>
+        <div className="user-review-container">
+          {userReviewDisplay}
+        </div>      
         <div className="review-index-container">
           {displayReviews}
         </div>

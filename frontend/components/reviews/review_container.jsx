@@ -21,7 +21,7 @@ const mapStateToProps = (state, ownProps) => {
       });
       reviewId = reviewId[0];
       review = reviews[reviewId];
-      debugger
+    
     }
   
   return({

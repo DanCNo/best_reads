@@ -35,7 +35,10 @@ class SessionForm extends React.Component {
     
     const user = Object.assign({}, this.state);
     this.props.processForm(user).then(
-      (()=> this.props.history.push("/home")).then(this.props.fetchUsers()),
+      (()=> {
+        this.props.history.push("/home");
+        this.props.fetchUsers();
+      }),
       (()=> this.props.history.push({pathname: `/${this.props.submitType}`, state: {user: user}}))
     );
   }

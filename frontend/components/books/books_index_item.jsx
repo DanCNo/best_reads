@@ -49,7 +49,7 @@ const BookIndexItem = ({ book, bookshelves, currentUser }) => {
         {book.author}
       </td>
       <td className="book-index-col-rating-container">
-        1-5 rating
+        
       </td>
       <td className="book-index-col-shelves-container">
         {shelfList}

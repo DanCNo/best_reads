@@ -23,7 +23,7 @@ const mapStateToProps = (state, ownProps) => {
       review = reviews[reviewId];
     
     }
-  
+  debugger
   return({
     review: review,
     book: book,

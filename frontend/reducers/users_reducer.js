@@ -42,8 +42,9 @@ const usersReducer = (state = {}, action) => {
     case RECEIVE_REVIEW:
       newState = ({}, state);
       const addAuthor = newState[action.review.author_id];
-      addAuthor.review_ids.push(action.review.id);
-      addAuthor.reviewed_book_ids.push(action.review.id);
+      debugger
+      if(!addAuthor.review_ids.includes(action.review.id)) addAuthor.review_ids.push(action.review.id);
+      if(!addAuthor.reviewed_book_ids.includes(action.review.book_id)) addAuthor.reviewed_book_ids.push(action.review.book_id);
       return newState;
 
     case REMOVE_REVIEW:

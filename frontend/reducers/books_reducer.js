@@ -53,8 +53,8 @@ const booksReducer = (state = {}, action) => {
     case RECEIVE_REVIEW:
       newState = merge({}, state);
       const reviewedBook = newState[action.review.book_id];
-      reviewedBook.review_ids.push(action.review.id);
-      reviewedBook.reviewer_ids.push(action.review.author_id);
+      if(!reviewedBook.review_ids.includes(action.review.id)) reviewedBook.review_ids.push(action.review.id);
+      if(!reviewedBook.reviewer_ids.includes(action.review.author_id)) reviewedBook.reviewer_ids.push(action.review.author_id);
       return newState;
 
     case REMOVE_REVIEW:

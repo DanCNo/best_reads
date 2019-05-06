@@ -4,19 +4,27 @@ import { withRouter } from 'react-router-dom';
 class ReviewForm extends React.Component {
   constructor(props) {
     super(props);
+    debugger
     if (this.props.review) {
-      this.state = this.props.review;
-      this.state.reviewChange = false;
-      this.formType = 'update';
+      this.state = {
+        id: this.props.review.id,
+        body: this.props.review.body,
+        author_id: this.props.review.author_id,
+        book_id: this.props.review.book_id,
+        rating: this.props.review.rating,
+        reviewChange: false,
+        formType: 'update'
+      };
     } else {
       this.state = {
+        id: null,
         body: '',
         author_id: this.props.currentUser.id,
         book_id: this.props.book.id,
         rating: 5,
-        reviewChange: false
+        reviewChange: false,
+        formType: 'write'
       };
-      this.formType = 'write';
     }
     
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -40,19 +48,17 @@ class ReviewForm extends React.Component {
 
     const review = Object.assign({}, this.state);
 
-    if(this.formType === 'write'){
-      review.reviewChange = false;
+    if(this.state.formType === 'write'){
+      this.setState({ reviewChange: false });
 
-      this.props.createReview(review).then(()=>{
-        
-        this.formType = "update";
-        this.setState(review);
+      this.props.createReview(review).then((response)=>{
+        this.setState(response.review);
+        this.setState({formType: "update"});
       });
     } else {
-      review.reviewChange = false;
-      this.props.updateReview(review).then(() =>{
-        this.setState(review);
-      });
+      this.setState({ reviewChange: false });
+      this.props.updateReview(review);
+      this.setState({ formType: "update" });
     }
   }
 
@@ -65,25 +71,26 @@ class ReviewForm extends React.Component {
   handleDelete(review){
     
     this.props.deleteReview(review.id).then(()=> {
-      this.formType = "write";
+    
       this.setState({
+        id: null,
         body: '',
         author_id: this.props.currentUser.id,
         book_id: this.props.book.id,
         rating: 5,
-        reviewChange: false
+        reviewChange: false,
+        formType: 'write'
       });
     });
   }
 
 
   render() {
-    
-    if(this.formType === null){
+    if(this.state.formType === null){
       return null;
     }
 
-    const reviewAction = (this.formType === 'update') ? (
+    const reviewAction = (this.state.formType === 'update') ? (
       <>
         <span className="review-action-button-container">
           <button className="review-action-button" value="Update Review" onClick={this.handleReviewAction}>Update Review</button>
@@ -107,10 +114,10 @@ class ReviewForm extends React.Component {
               <textarea 
                 value={this.state.body} 
                 onChange={this.update('body')} 
-                className={`${this.formType}-review-input`}
+                className={`${this.state.formType}-review-input`}
                 placeholder='Write your review'>
               </textarea>
-              <input className={`${this.formType}-submit`} type="submit" value={`submit`} />
+              <input className={`${this.state.formType}-submit`} type="submit" value={`submit`} />
             </div>
 
           </form>
@@ -121,7 +128,7 @@ class ReviewForm extends React.Component {
     )
 
     return (
-      <div className={`${this.formType}-review-container`}>
+      <div className={`${this.state.formType}-review-container`}>
         <div className="user-review-display-container">
         </div>
         <div>

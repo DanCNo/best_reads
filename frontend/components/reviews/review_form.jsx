@@ -4,7 +4,6 @@ import { withRouter } from 'react-router-dom';
 class ReviewForm extends React.Component {
   constructor(props) {
     super(props);
-    debugger
     if (this.props.review) {
       this.state = {
         id: this.props.review.id,

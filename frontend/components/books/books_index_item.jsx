@@ -22,8 +22,7 @@ const BookIndexItem = ({ book, bookshelves, currentUser }) => {
     displayBookshelves && Object.values(displayBookshelves).length > 0){
     shelfList = displayBookshelf_ids.map((id) => {
       if(displayBookshelves[id]){      
-        // return displayBookshelves[id].title;
-        // return <Link to={`/bookshelves/${id}`} className="shelf-link"><span>{displayBookshelves[id].title}</span></Link>
+        
         return <BookshelvesDisplayItem key={`bookshelf-${id}`} bookshelf={displayBookshelves[id]}/>
       }
     });

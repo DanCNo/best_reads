@@ -21,7 +21,6 @@ class BookShowItem extends React.Component {
   componentDidMount() {
     this.props.fetchBookshelves();
     this.props.fetchBook(this.props.match.params.bookId);
-    this.props.fetchReviews();
     
     
   }
@@ -33,7 +32,14 @@ class BookShowItem extends React.Component {
   }
 
   handleCreateShelving(shelving){
-    this.props.createShelving(shelving);
+    if(this.props.defaultBookshelf.length > 0 && this.props.defaultBookshelvesIds.includes(shelving.bookshelf_id)){
+      const shelvingId = this.props.book.shelving_ids.filter((id) => this.props.defaultBookshelf[0].shelving_ids.includes(id));
+      this.props.deleteShelving(shelvingId);
+      this.props.createShelving(shelving);
+    } else {
+      this.props.createShelving(shelving);
+    }
+    
       
   }
 

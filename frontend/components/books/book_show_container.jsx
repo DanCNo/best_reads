@@ -8,13 +8,20 @@ const mapStateToProps = (state, ownProps) => {
 
   const book = state.entities.books[ownProps.match.params.bookId];
   const currentUser = state.entities.users[state.session.id];
-  let rated = false;
-
+  const bookshelves = Object.values(state.entities.bookshelves);
+  const defaultBookshelves = bookshelves.filter((bookshelf)=>{
+    return (bookshelf.default === true);
+  });
+  const defaultBookshelvesIds = defaultBookshelves.map((bookshelf) => bookshelf.id);
+  const defaultBookshelf = defaultBookshelves.filter((bookshelf) => {
+    return (bookshelf.book_ids.includes(book.id));
+  });
+  
   return ({
     book: book,
     bookshelves: Object.values(state.entities.bookshelves),
-    rated: rated,
-    
+    defaultBookshelvesIds: defaultBookshelvesIds,
+    defaultBookshelf: defaultBookshelf
   });
 };
 

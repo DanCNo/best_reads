@@ -96,6 +96,15 @@
   align-items: center;
 }
 
+.read-status{
+  background: #ebe9e6;
+}
+
+.read-status-none{
+  color: #ffffff;
+  background: #036a63;
+}
+
 .menu{
   display: none;
   flex-direction: column;

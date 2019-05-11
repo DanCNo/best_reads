@@ -62,7 +62,7 @@ class BookShowItem extends React.Component {
       
       return (
         <div className="shelving-container">
-          <span className="shelving-item">
+          <span className="read-status">
             {` √ ${readStatus.title}`}
           </span>
         </div>
@@ -70,7 +70,7 @@ class BookShowItem extends React.Component {
     } else {
       return (
         <div className="shelving-container">
-          <span className="shelving-item">
+          <span className="read-status-none">
             {`${this.props.bookshelves[2].title}`}
           </span>
         </div>

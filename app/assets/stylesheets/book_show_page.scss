@@ -96,11 +96,17 @@
   align-items: center;
 }
 
-.book-show-shelvings-container{
-  display: flex;
+.menu{
+  display: none;
   flex-direction: column;
   align-items: left;
   padding-top: 10px;
+}
+
+.show{
+  display: flex;
+  position: absolute;
+  background: #ffffff;
 }
 
 .shelving-button-container{

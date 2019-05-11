@@ -50,9 +50,7 @@ class BookshelvesIndex extends React.Component {
     let bookshelves = this.props.bookshelves.map((bookshelf, idx) => {
       const deleteButtonForm = (idx > 2 ) ? (
         <div>
-          <form onSubmit={() => this.deleteBookshelf(bookshelf.id)}>
-            <input className="delete-bookshelf-submit" type="submit" value="delete" />
-          </form>
+          <button className="delete-bookshelf-button" value="delete" onClick={()=> this.handleDelete(bookshelf.id)}>Delete</button>
         </div>
       ) : (
           <div></div>

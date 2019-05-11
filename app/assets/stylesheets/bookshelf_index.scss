@@ -62,12 +62,15 @@
   align-items: center;
 }
 
-.delete-bookshelf-submit{
+.delete-bookshelf-button{
   background-color: #ebe9e6;
   border-radius: 3px;
+  color: #036a63;
+  font-size: 14px;
+  margin-left: 3px;
 }
 
-.delete-bookshelf-submit:hover {
+.delete-bookshelf-button:hover {
   cursor: pointer;
   background-color: rgb(219, 216, 211);
 }

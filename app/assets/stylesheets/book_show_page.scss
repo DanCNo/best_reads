@@ -96,6 +96,12 @@
   align-items: center;
 }
 
+.book-show-read-status{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
 .read-status{
   background: #ebe9e6;
 }

@@ -16,6 +16,9 @@ class BookShowItem extends React.Component {
     this.deleteShelving = this.props.deleteShelving.bind(this);
     this.handleDeleteShelving = this.handleDeleteShelving.bind(this);
     this.handleCreateShelving = this.handleCreateShelving.bind(this);
+    this.renderReadStatus = this.renderReadStatus.bind(this);
+    this.renderMenuList = this.renderMenuList.bind(this);
+    this.toggleMenu = this.toggleMenu.bind(this);
   }
 
   componentDidMount() {
@@ -41,6 +44,75 @@ class BookShowItem extends React.Component {
     }
     
       
+  }
+
+  toggleMenu(){
+
+  }
+
+  renderReadStatus(){
+    if(!this.props.book || this.props.bookshelves.length < 1) {
+      return null;
+    }
+
+    const book = this.props.book;
+    const statusBookshelves = this.props.bookshelves.slice(0,3);
+    const readStatus = statusBookshelves.find((bookshelf) => {
+
+      return bookshelf.book_ids.includes(book.id);
+
+    });
+
+    if(readStatus){
+      
+      return (
+        <div className="shelving-container">
+          <span className="shelving-item">
+            {`${readStatus.title}`}
+          </span>
+        </div>
+      )
+    } else {
+      return (
+        <div className="shelving-container">
+          <span className="shelving-item">
+            {`${this.props.bookshelves[2].title}`}
+          </span>
+        </div>
+      )
+    }
+
+  }
+
+  renderMenuList(){
+    if (!this.props.book || this.props.bookshelves.length < 1) {
+
+      return null;
+    }
+
+    const book = this.props.book;
+    const shelvings = this.props.bookshelves.map((bookshelf, idx) => {
+      if (bookshelf.book_ids.includes(book.id)) {
+
+        const shelvingId = book.shelving_ids.filter((id) => bookshelf.shelving_ids.includes(id));
+
+        return (
+          <button className="shelving-button-container" key={idx + 1000} onClick={() => this.handleDeleteShelving(shelvingId[0])}>
+            < ShelvingItem key={idx} bookshelf={bookshelf}
+              onBookshelf={true} />
+          </button>
+        )
+      } else {
+
+        return (
+          <button className="shelving-button-container" key={idx + 1000} onClick={() => this.handleCreateShelving({ bookshelf_id: bookshelf.id, book_id: book.id })}>
+            < ShelvingItem key={idx} bookshelf={bookshelf}
+              onBookshelf={false} />
+          </button>
+        )
+      }
+    });
+    return shelvings;
   }
 
   render() {
@@ -85,8 +157,11 @@ class BookShowItem extends React.Component {
         <div className="book-show-head-container">
           <div className="book-show-cover-container">
             <img className="book-show-cover" src={this.props.book.cover_url} alt=""/>
+            <div>
+              {this.renderReadStatus()}
+            </div>
             <div className="book-show-shelvings-container">
-              {shelvings}
+              {this.renderMenuList()}
             </div>
           </div>
           <div className="book-show-info-container">

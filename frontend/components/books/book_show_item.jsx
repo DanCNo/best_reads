@@ -26,6 +26,7 @@ class BookShowItem extends React.Component {
   componentDidMount() {
     this.props.fetchBookshelves();
     this.props.fetchBook(this.props.match.params.bookId);
+    this.props.fetchReviews();
   }
 
   handleDeleteShelving(id){ 

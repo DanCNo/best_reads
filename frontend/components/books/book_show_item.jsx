@@ -112,17 +112,27 @@ class BookShowItem extends React.Component {
   }
   
   toggleMenu(){
-    if(document.getElementById('menu')){
-      document.getElementById('menu').classList.toggle('show');
+    let myMenu = document.getElementById('menu');
+    if(myMenu){
+      myMenu.classList.toggle('show');
     }
+    
   }
 
   showMenu(){
-
+    // let menuShow = getElementById('menu');
+    // if (menuShow){
+    //   if (menuShow.classList=='show'){
+    //     document.addEventListener('click', this.hideMenu);
+    //   }
+    // }
   }
 
-  hideMenu(){
-
+  hideMenu(e){
+    // if (!this.dropdownMenu.contains(e.target)){
+    //   document.removeEventListener('click', this.hideMenu);
+    //   this.toggleMenu();
+    // }
   }
 
   render() {
@@ -151,7 +161,7 @@ class BookShowItem extends React.Component {
                 <i className="fas fa-caret-down fa-2x" style={{color: 'white'}}></i>
               </button>
             </div>
-            <div className="menu" id="menu">
+            <div className="menu" id="menu" ref={(element) => {this.dropdownMenu = element}}>
               {this.renderMenuList()}
             </div>
           </div>

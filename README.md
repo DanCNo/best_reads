@@ -39,4 +39,9 @@ Best Reads is a web application clone of Good Reads, where users can maintain a 
     * Redux
     * HTML5 / CSS3
 
-## Highlights
+### Highlights
+
+### Future Features
+
+  * Search
+  * Genre Tags

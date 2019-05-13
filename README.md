@@ -41,7 +41,15 @@ Best Reads is a web application clone of Good Reads, where users can maintain a 
 
 ### Highlights
 
-Book Show Page
+Start Page with session form rendered in two different spots
+
+![best reads start page](https://github.com/DanCNo/best_reads/blob/master/app/assets/images/bestreadsstartpage.png)
+
+Home Page with responsive create and delete custom bookshelves and with index of books that have comma separated bookshelf components
+
+![best reads home page](https://github.com/DanCNo/best_reads/blob/master/app/assets/images/bestreadshomepage.png)
+
+Book Show Page with responsive CRUD reviews with only review owners able to update and delete
 
 ![best reads book show](https://github.com/DanCNo/best_reads/blob/master/app/assets/images/bestreadsbookshowpage.png)
 

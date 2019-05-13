@@ -1,5 +1,7 @@
 ## Best Reads
 
+[Live Link](http://bestreads-fullstack.herokuapp.com "Best Reads")
+
 ### About
 
 Best Reads is a web application clone of Good Reads, where users can maintain a virtual bookshelf and review books. 

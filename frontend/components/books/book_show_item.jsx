@@ -113,7 +113,6 @@ class BookShowItem extends React.Component {
   
   toggleMenu(){
     if(document.getElementById('menu')){
-      debugger
       document.getElementById('menu').classList.toggle('show');
     }
   }

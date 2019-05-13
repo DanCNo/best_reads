@@ -168,7 +168,18 @@
   height: 200px;
 }
 
+.review-submit{
+  background-color: #ebe9e6;
+  border-radius: 3px;
+  color: #036a63;
+  font-size: 14px;
+  margin-left: 3px;
+}
 
+.review-submit:hover{
+  cursor: pointer;
+  background-color: rgb(219, 216, 211);
+}
 
 .review-delete-button{
   background-color: #ebe9e6;

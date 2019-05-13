@@ -41,6 +41,8 @@ Best Reads is a web application clone of Good Reads, where users can maintain a 
 
 ### Highlights
 
+![best reads book show](https://github.com/DanCNo/best_reads/blob/master/app/assets/images/bestreadsbookshowpage.png)
+
 ### Future Features
 
   * Search

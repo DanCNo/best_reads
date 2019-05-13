@@ -99,15 +99,50 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  border-radius: 3px;
+  align-items: center;
+}
+
+.read-status-container{
+  width: 100%;
 }
 
 .read-status{
   background: #ebe9e6;
+  color: #036a63;
+  width: 100%;
+  padding-left: 5px;
+  border: 1px;
+  border-color: rgb(216, 216, 216) rgb(209, 209, 209) rgb(186, 186, 186);
+  border-radius: 3px;
+  overflow: hidden;
 }
+
 
 .read-status-none{
   color: #ffffff;
   background: #036a63;
+  width: 100%;
+  padding-left: 5px;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.menu-toggle-button{
+  border-radius: 3px;
+  background: #036a63;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-top: 1px;
+  padding-bottom: 1px;
+}
+
+.menu-toggle-button:hover{
+  background: #055c56;
+}
+
+.menu-toggle-button:focus{
+  outline: none;
 }
 
 .menu{

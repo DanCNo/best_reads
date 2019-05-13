@@ -62,18 +62,18 @@ class BookShowItem extends React.Component {
     if(readStatus){
       
       return (
-        <div className="shelving-container">
-          <span className="read-status">
+        <div className="read-status-container">
+          <div className="read-status">
             {` √ ${readStatus.title}`}
-          </span>
+          </div>
         </div>
       )
     } else {
       return (
-        <div className="shelving-container">
-          <span className="read-status-none">
+        <div className="read-status-container">
+          <div className="read-status-none">
             {`${this.props.bookshelves[2].title}`}
-          </span>
+          </div>
         </div>
       )
     }
@@ -146,11 +146,9 @@ class BookShowItem extends React.Component {
           <div className="book-show-cover-container">
             <img className="book-show-cover" src={this.props.book.cover_url} alt=""/>
             <div className="book-show-read-status">
-              <div>
-                {this.renderReadStatus()}
-              </div>
-              <button onClick={this.toggleMenu}>
-                toggle
+              {this.renderReadStatus()}              
+              <button className="menu-toggle-button" onClick={this.toggleMenu}>
+                <i className="fas fa-caret-down fa-2x" style={{color: 'white'}}></i>
               </button>
             </div>
             <div className="menu" id="menu">

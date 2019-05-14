@@ -53,7 +53,7 @@ Book Show Page with responsive CRUD reviews with only review owners able to upda
 
 ![best reads book show](https://github.com/DanCNo/best_reads/blob/master/app/assets/images/bestreadsbookshowpage.png)
 
-###Code Snippet
+### Code Snippet
 
 To keep a normalized state, the joins table Shelving that connects books and bookshelves is represented in the Redux state by association id arrays. The bookshelf reducer listens for the shelving actions to affect a change in the state via it's association id arrays.
 

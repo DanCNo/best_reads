@@ -19,8 +19,6 @@ class BookShowItem extends React.Component {
     this.renderReadStatus = this.renderReadStatus.bind(this);
     this.renderMenuList = this.renderMenuList.bind(this);
     this.toggleMenu = this.toggleMenu.bind(this);
-    this.showMenu = this.showMenu.bind(this);
-    this.hideMenu = this.hideMenu.bind(this);
   }
 
   componentDidMount() {
@@ -117,22 +115,6 @@ class BookShowItem extends React.Component {
       myMenu.classList.toggle('show');
     }
     
-  }
-
-  showMenu(){
-    // let menuShow = getElementById('menu');
-    // if (menuShow){
-    //   if (menuShow.classList=='show'){
-    //     document.addEventListener('click', this.hideMenu);
-    //   }
-    // }
-  }
-
-  hideMenu(e){
-    // if (!this.dropdownMenu.contains(e.target)){
-    //   document.removeEventListener('click', this.hideMenu);
-    //   this.toggleMenu();
-    // }
   }
 
   render() {

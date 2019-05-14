@@ -26,19 +26,6 @@ const usersReducer = (state = {}, action) => {
       removeBookshelf.bookshelf_ids = removeBookshelf.bookshelf_ids.filter(id => id !== action.bookshelf.id);
       return newState;
 
-    // case RECEIVE_SHELVING:
-    //   newState = ({}, state);
-    //   const addShelvingBook = newState[action.shelving.creator.id];
-    //   addShelvingBook.book_ids.push(action.shelving.book_id);
-    //   return newState;
-
-    // case REMOVE_SHELVING:
-    //   newState = ({}, state);
-    //   const removeShelvingBook = newState[action.shelving.creator.id];
-
-    //   removeShelvingBook.book_ids = removeShelvingBook.book_ids.filter(id => id !== action.shelving.book_id);
-    //   return newState;
-
     case RECEIVE_REVIEW:
       newState = ({}, state);
       const addAuthor = newState[action.review.author_id];

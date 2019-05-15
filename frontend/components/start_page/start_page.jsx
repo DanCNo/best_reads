@@ -27,11 +27,11 @@ const StartPage = () => {
 
       <div className="selling-point-box">
         <div className="selling-point">
-          <h2 className="selling-headline">Deciding What to Read Next?</h2>
+          <div className="selling-headline">Deciding What to Read Next?</div>
           Browse through our selection and read reviews. Keep track of what you have read and have not read.
         </div>
         <div className="selling-point">
-          <h2 className="selling-headline">What are other people reading?</h2>
+          <div className="selling-headline">What are other people reading?</div>
           What are other people reading and what do they think about your favorite and least favorite books?
         </div>
       </div>

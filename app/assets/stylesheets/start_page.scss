@@ -171,7 +171,7 @@
   left: 0;
   bottom: 0;
   width: 100%;
-  background-color: #ebe9e6;
+  background-color: #f9f9e9;
   text-align: center;
 }
 
@@ -180,7 +180,7 @@
   flex-direction: row;
   justify-content: space-around;
   font-family: 'Raleway', sans-serif;
-  background-color: #ebe9e6;
+  background-color: #f9f9e9;
   border-radius: 3px;
  
 
@@ -198,7 +198,7 @@ i {
 
 .per-nav-link:hover{
   animation: shadow-drop 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-  background-color: #ebe9e6;
+  background-color: #f9f9e9;
 }
 
 @-webkit-keyframes shadow-drop {

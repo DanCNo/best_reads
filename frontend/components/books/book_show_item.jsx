@@ -131,7 +131,7 @@ class BookShowItem extends React.Component {
         </div>
         <div className="mybooks-link-container">
           <Link className="mybooks-link" to={`/bookshelves`}>
-            <span className="mybooks-link-text">My Books</span>
+            <div className="mybooks-link-text">My Books</div>
           </Link>
         </div>
         <div className="book-show-head-container">

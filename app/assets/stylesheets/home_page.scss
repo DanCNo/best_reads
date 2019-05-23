@@ -85,15 +85,25 @@
 }
 
 .mybooks-link-container {
-  width: 975px;
+  width: 920px;
+  padding-top: 10px;
+  padding-left: 10px;
 }
 
 .mybooks-link {
   text-decoration: none;
-  color: #362111;
 }
 
-.mybooks-link:hover {
+.mybooks-link-text {
+  text-decoration: none;
+  color: #036a63;
+  font-size: 20px;
+  font-weight: bold;
+  font-family: "Merriweather", Georgia, "Times New Roman", serif;
+  
+}
+
+.mybooks-link-text:hover {
   text-decoration: underline;
 }
 

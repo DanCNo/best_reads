@@ -110,3 +110,49 @@
 .header-name {
   font-size: 15px;
 }
+
+.navbar-links-container {
+  display: flex;
+  flex-direction: row;
+  height: 58px;
+}
+
+.navbar-home-link {
+  padding-right: 15px;
+}
+
+.navbar-home-my-books {
+  color: #362111;
+  display: flex;
+  flex-direction: column;
+  padding-left: 15px;
+  padding-right: 15px;
+  text-decoration: none;
+  justify-content: center;
+}
+
+.navbar-home-my-books:hover {
+  color: #f9f9e9;
+  background: #362111;
+}
+
+.navbar-home-home-link {
+  color: #362111;
+  display: flex;
+  flex-direction: column;
+  padding-left: 15px;
+  padding-right: 15px;
+  text-decoration: none;
+  justify-content: center;
+}
+
+.navbar-home-home-link:hover {
+  color: #f9f9e9;
+  background: #362111;
+}
+
+.home-page-text {
+  display: flex;
+  flex-direction: row;
+  // align-items: center;
+}

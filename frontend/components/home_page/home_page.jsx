@@ -14,11 +14,6 @@ const HomePage = () => {
           <div className="top-bar-container">
             <NavbarContainer />
           </div>
-          <div className="mybooks-link-container">
-            <Link className="mybooks-link" to={`/bookshelves`}>
-              <div className="mybooks-link-text">My Books</div>
-            </Link>
-          </div>
           <div className="home-page-content-container">
             <div className="home-page-bookshelf-index-container">
               <BookshelvesIndexContainer />

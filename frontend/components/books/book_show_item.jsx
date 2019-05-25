@@ -129,11 +129,6 @@ class BookShowItem extends React.Component {
         <div className="top-bar-container">
           <NavbarContainer />
         </div>
-        <div className="mybooks-link-container">
-          <Link className="mybooks-link" to={`/bookshelves`}>
-            <div className="mybooks-link-text">My Books</div>
-          </Link>
-        </div>
         <div className="book-show-head-container">
           <div className="book-show-cover-container">
             <img className="book-show-cover" src={this.props.book.cover_url} alt=""/>

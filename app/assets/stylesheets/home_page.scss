@@ -37,8 +37,11 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  width: 1000px;
-  min-width: 1000px;
+  width: 80em;
+  margin: 0 auto;
+  box-sizing: border-box;
+  // width: 1000px;
+  // min-width: 1000px;
 }
 
 .navbar-header-name-container {

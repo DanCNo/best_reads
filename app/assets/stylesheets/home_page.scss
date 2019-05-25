@@ -26,7 +26,9 @@
 
 .top-bar-container {
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
   width: 100%;
   box-shadow: 0px 0px 2px #362111;
   background: #f9f9e9;
@@ -37,11 +39,11 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  width: 80em;
-  margin: 0 auto;
+  // max-width: 80em;
+  // margin: 0 auto;
   box-sizing: border-box;
-  // width: 1000px;
-  // min-width: 1000px;
+  width: 1000px;
+  min-width: 1000px;
 }
 
 .navbar-header-name-container {
@@ -118,6 +120,7 @@
   display: flex;
   flex-direction: row;
   height: 58px;
+  border: 1px solid red;
 }
 
 .navbar-home-link {
@@ -127,11 +130,13 @@
 .navbar-home-my-books {
   color: #362111;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   padding-left: 15px;
   padding-right: 15px;
   text-decoration: none;
   justify-content: center;
+  align-items: center;
+  white-space: nowrap;
   font-size: 16px;
 }
 
@@ -160,4 +165,24 @@
   display: flex;
   flex-direction: row;
   // align-items: center;
+}
+
+.navbar-links-container-2 {
+    display: none;
+  }
+
+@media (min-width: 768px) and (max-width: 1199px) {
+
+  .navbar-links-container {
+    display: none;
+  }
+
+  .navbar-links-container-2 {
+    display: flex;
+    justify-content: center;
+    height: 58px;
+    border-top: inset 1px #362111;
+    // box-shadow: 0px 0px 2px #362111;
+    width: 100vmax;
+  }
 }

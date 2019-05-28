@@ -8,6 +8,8 @@
 .bookshelf-page-content-container {
   display: flex;
   flex-direction: row;
+  margin: 0px auto;
+  width: 930px;
 }
 
 .bookshelf-page-bookshelf-index-container {
@@ -17,5 +19,13 @@
 
 .bookshelf-main-divider-line {
   border-bottom: 1px solid #EBE8D5;
+  margin: 0px auto;
   width: 910px;
+}
+
+.mybooks-link-container {
+  width: 920px;
+  margin: 0px auto;
+  padding-top: 10px;
+  padding-left: 10px;
 }

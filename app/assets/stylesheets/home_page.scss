@@ -12,6 +12,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100vw;
 }
 
 .home-page-content-container {
@@ -30,7 +31,7 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  box-shadow: 0px 0px 2px #362111;
+  box-shadow: 1px 0px 2px rgba(0,0,0,0.15);
   background: #f9f9e9;
 }
 
@@ -39,11 +40,11 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  // max-width: 80em;
-  // margin: 0 auto;
+
   box-sizing: border-box;
-  width: 1000px;
-  min-width: 1000px;
+  // max-width: 1000px;
+  width: 1200px;
+  // min-width: 760px;
 }
 
 .navbar-header-name-container {
@@ -120,7 +121,6 @@
   display: flex;
   flex-direction: row;
   height: 58px;
-  border: 1px solid red;
 }
 
 .navbar-home-link {
@@ -164,7 +164,6 @@
 .home-page-text {
   display: flex;
   flex-direction: row;
-  // align-items: center;
 }
 
 .navbar-links-container-2 {
@@ -172,6 +171,14 @@
   }
 
 @media (min-width: 768px) and (max-width: 1199px) {
+
+  .top-bar-container {
+    box-shadow: none;
+  }
+
+  .navbar-container {
+    width: 100%;
+  }
 
   .navbar-links-container {
     display: none;
@@ -181,8 +188,50 @@
     display: flex;
     justify-content: center;
     height: 58px;
-    border-top: inset 1px #362111;
-    // box-shadow: 0px 0px 2px #362111;
-    width: 100vmax;
+    box-shadow: 1px 0px 2px rgba(0,0,0,0.15);
+    width: 100vw;
+  }
+
+  .navbar-home-my-books {
+    padding: 0px 30px 0px 30px
+  }
+
+  .navbar-home-home-link {
+    padding: 0px 30px 0px 30px
+  }
+}
+
+@media (min-width: 1px) and (max-width: 767px) {
+
+  .top-bar-container {
+    box-shadow: none;
+  }
+
+  .navbar-container {
+    width: 100%;
+  }
+
+  .navbar-links-container {
+    display: none;
+  }
+
+  .navbar-links-container-2 {
+    display: flex;
+    justify-content: center;
+    height: 58px;
+    box-shadow: 1px 0px 2px rgba(0,0,0,0.15);
+    width: 100vw;
+  }
+
+  .navbar-home-my-books {
+    padding: 0px 30px 0px 30px
+  }
+
+  .navbar-home-home-link {
+    padding: 0px 30px 0px 30px
+  }
+
+  .header-name {
+    display: none;
   }
 }

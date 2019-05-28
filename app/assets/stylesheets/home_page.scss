@@ -18,6 +18,8 @@
 .home-page-content-container {
   display: flex;
   flex-direction: row;
+  margin: 0px auto;
+  width: 970px;
 }
 
 .home-page-bookshelf-index-container {
@@ -167,8 +169,18 @@
 }
 
 .navbar-links-container-2 {
-    display: none;
-  }
+  display: none;
+}
+
+.navbar-left-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.nav-home-icon {
+  display: none;
+}
 
 @media (min-width: 768px) and (max-width: 1199px) {
 
@@ -211,6 +223,12 @@
     width: 100%;
   }
 
+  .navbar-left-container {
+    width: 100%;
+    height: 58px;
+    justify-content: center;
+  }
+
   .navbar-links-container {
     display: none;
   }
@@ -230,8 +248,36 @@
   .navbar-home-home-link {
     padding: 0px 30px 0px 30px
   }
+  
+  .navbar-header-name-container {
+    margin: 0px;
+    padding: 0px;
+  }
 
   .header-name {
     display: none;
+  }
+
+  .nav-home-icon-container {
+    width: 20px;
+    height: 20px;
+  }
+
+  .nav-home-icon {
+    display: flex;
+    background-image: image_url('bestreads_nav_home.png');
+    background-position: center;
+    background-size: 20px 20px;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    left: 8px;
+  }
+
+  .navbar-home-link {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    padding-right: 0px;
   }
 }

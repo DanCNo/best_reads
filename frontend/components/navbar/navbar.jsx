@@ -6,18 +6,25 @@ const Navbar = ({ currentUser, logout }) => {
   return (
     <>
       <div className="navbar-container">
-        <div className="home-page-text">
-          <Link className="navbar-home-link" to={`/home`}>
-            <span className="home-page-bar-text-best">best</span>
-            <span className="home-page-bar-text-reads">reads</span>
-          </Link>
-          <div className="navbar-links-container">
-            <Link className="navbar-home-home-link" to={`/home`}>
-              <span className="home-page-bar-text-home">Home</span>
+        <div className="navbar-left-container">
+          <div className="nav-home-icon-container">
+            <Link className="nav-home-icon" to={`/home`}>
+              
             </Link>
-            <Link className="navbar-home-my-books" to={`/bookshelves`}>
-              <span className="home-page-bar-text-my-books">My Books</span>
+          </div>
+          <div className="home-page-text">
+            <Link className="navbar-home-link" to={`/home`}>
+              <span className="home-page-bar-text-best">best</span>
+              <span className="home-page-bar-text-reads">reads</span>
             </Link>
+            <div className="navbar-links-container">
+              <Link className="navbar-home-home-link" to={`/home`}>
+                <span className="home-page-bar-text-home">Home</span>
+              </Link>
+              <Link className="navbar-home-my-books" to={`/bookshelves`}>
+                <span className="home-page-bar-text-my-books">My Books</span>
+              </Link>
+            </div>
           </div>
         </div>
         <div className="navbar-user-container">

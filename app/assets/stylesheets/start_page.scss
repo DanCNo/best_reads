@@ -1,16 +1,18 @@
 .start-page-bar-container {
-  display: flex;
-  justify-content: center;
+  display: block;
+  position: static;
+  // justify-content: center;
   width: 100vw;
 }
 
 .start-page-bar {
   margin: 0px auto;
+  position: relative;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  width: 975px;
+  width: 970px;
   height: 75px;
 }
 

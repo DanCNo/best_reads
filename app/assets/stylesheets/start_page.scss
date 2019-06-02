@@ -158,8 +158,15 @@
   cursor: pointer;
 }
 
+.selling-point-box-container {
+  width: 100vw;
+}
+
 .selling-point-box{
+  margin: 0px auto;
+  position: relative;
   margin-top: 10px;
+  width: 970px;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;

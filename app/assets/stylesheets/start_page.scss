@@ -117,11 +117,17 @@
   flex-direction: column;
 }
 
+.sign-up-header-container {
+  width: 100vw;
+}
+
 .sign-up-header {
   display: flex;
+  margin: 0px auto;
+  position: relative;
   flex-direction: row;
   align-items: center;
-  min-width: 975px;
+  width: 975px;
   justify-content: space-between;
   padding: 50px 0px 50px 0px;
 }

@@ -9,21 +9,20 @@ const StartPage = () => {
       <div className="start-page-container">
         <div className="start-page-bar-container">
           <div className="start-page-bar">
-            <div>
-              <div className="start-page-text">
-                <span className="start-page-text-best">best</span>
-                <span className="start-page-text-reads">reads</span>
-              </div>
+            <div className="start-page-text">
+              <span className="start-page-text-best">best</span>
+              <span className="start-page-text-reads">reads</span>
             </div>
             < LoginFormContainer />
           </div>
         </div>
-        
-        <div className="sign-up-header">
-          <div className="slogan-img-container">
-            <img className ="slogan-img" src={window.bestreadssloganURL} />
+        <div className="sign-up-header-container">
+          <div className="sign-up-header">
+            <div className="slogan-img-container">
+              <img className ="slogan-img" src={window.bestreadssloganURL} />
+            </div>
+            < SignUpContainer />
           </div>
-          < SignUpContainer />
         </div>
       </div>
 

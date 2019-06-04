@@ -20,7 +20,7 @@ class ReviewForm extends React.Component {
         body: '',
         author_id: this.props.currentUser.id,
         book_id: this.props.book.id,
-        rating: 5,
+        rating: 0,
         reviewChange: false,
         formType: 'write'
       };
@@ -76,7 +76,7 @@ class ReviewForm extends React.Component {
         body: '',
         author_id: this.props.currentUser.id,
         book_id: this.props.book.id,
-        rating: 5,
+        rating: 0,
         reviewChange: false,
         formType: 'write'
       });

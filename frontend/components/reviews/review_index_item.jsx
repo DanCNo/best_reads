@@ -16,7 +16,10 @@ const ReviewIndexItem = ({ book, review, bookReviewers }) => {
         <div className="reviewer-username-container">
           <span>{`${reviewer.username}\'s Review`}</span>
         </div>
-        <div >
+        <div className="rating-container">
+          Rating: <span>{review.rating}</span>
+        </div>
+        <div>
           <span>{review.body}</span>
         </div>
     </div>

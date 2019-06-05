@@ -20,25 +20,29 @@
 }
 
 .book-show-info-container{
-  padding: 10px;
+  padding: 0px 10px 10px 10px;
 }
 
 .book-show-title{
+  margin-block-start: 0px;
+  margin-block-end: 0px;
   font-family: "Merriweather", "Georgia", serif;
   font-size: 24px;
-  padding: 5px;
+  // padding: 5px;
 }
 
 .book-show-author{
   font-family: "Merriweather", "Georgia", serif;
   font-size: 18px;
-  padding: 5px;
+  margin-bottom: 4px;
+  // padding: 5px;
 }
 
 .book-show-description{
   font-family: "Merriweather", "Georgia", serif;
   font-size: 16px;
-  padding: 5px;
+  margin-bottom: 8.5px;
+  // padding: 5px;
 }
 
 .book-show-header-divider-line{
@@ -54,12 +58,17 @@
 .book-show-pages-container{
   display: flex;
   flex-direction: row;
+  padding-top: 7.5px;
 }
 
 .book-show-pages-name{
   width: 120px;
   font-weight: bold;
-  padding: 2px;
+  padding: 4px 2px 2px 0px;
+}
+
+.book-show-pages-val{
+  padding: 4px;
 }
 
 .book-show-year-container{
@@ -70,7 +79,11 @@
 .book-show-year-name{
   width: 120px;
   font-weight: bold;
-  padding: 2px;
+  padding: 4px 2px 2px 0px;
+}
+
+.book-show-year-val{
+  padding: 4px;
 }
 
 .book-show-isbn-container{
@@ -81,7 +94,11 @@
 .book-show-isbn-name{
   width: 120px;
   font-weight: bold;
-  padding: 2px;
+  padding: 4px 2px 2px 0px;
+}
+
+.book-show-isbn-val{
+  padding: 4px;
 }
 
 .book-show-main-divider-line{

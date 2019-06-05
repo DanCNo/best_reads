@@ -150,7 +150,7 @@ class BookShowItem extends React.Component {
               <div className="book-show-author">By: {this.props.book.author}</div>
             </div>
             <div className="book-show-description-container">
-              <p className="book-show-description">Description: {this.props.book.description}</p>
+              <div className="book-show-description">Description: {this.props.book.description}</div>
             </div>
             <div className="book-show-header-divider-line">
             </div>

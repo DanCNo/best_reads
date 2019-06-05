@@ -118,6 +118,7 @@
   justify-content: space-between;
   border-radius: 3px;
   align-items: center;
+  margin-top: 5px;
 }
 
 .read-status-container{
@@ -200,18 +201,21 @@
   
 }
 
+.book-show-review-form-container{
+  margin: 3px 0px 5px 0px;
+}
+
 .review-index-container{
   width: 975px;
 }
 
 .user-review-container{
   width: 975px;
-  margin-bottom: 5px;
 }
 
 .user-review-display-container{
   width: 800px;
-  padding-top: 5px;
+  // padding-top: 5px;
   
   
 }
@@ -265,7 +269,7 @@
 .review-index-item-container{
   border-top: 1px solid black;
   padding-top: 5px;
-  margin-top: 5px;
+  // margin-top: 5px;
   font-size: 14px;
   font-family: "Merriweather", "Georgia", serif;
   

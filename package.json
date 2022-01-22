@@ -7,7 +7,7 @@
     "@babel/preset-react": "^7.0.0",
     "babel-loader": "^8.0.5",
     "lodash": "^4.17.11",
-    "node-fetch": "^2.3.0",
+    "node-fetch": "^3.1.1",
     "react": "^16.8.5",
     "react-dom": "^16.8.5",
     "react-redux": "^6.0.1",
